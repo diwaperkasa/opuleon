@@ -55,6 +55,8 @@
                 <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Planner</a></li>
                 <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Newsletter</a></li>
                 <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Studio</a></li>
+                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">About</a></li>
+                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Privacy</a></li>
             </ul>
         </nav>
     </div>
