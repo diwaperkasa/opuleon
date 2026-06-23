@@ -1,0 +1,116 @@
+// Libre Baskerville Font Imports - Static Variants
+// Import all font weights and styles from the static folder
+
+// Regular (400)
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/styles/utils/fonts/Libre_Baskerville/static/LibreBaskerville-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/styles/utils/fonts/Libre_Baskerville/static/LibreBaskerville-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+// Medium (500)
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/styles/utils/fonts/Libre_Baskerville/static/LibreBaskerville-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/styles/utils/fonts/Libre_Baskerville/static/LibreBaskerville-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+// Semi Bold (600)
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/styles/utils/fonts/Libre_Baskerville/static/LibreBaskerville-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/styles/utils/fonts/Libre_Baskerville/static/LibreBaskerville-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+// Bold (700)
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/styles/utils/fonts/Libre_Baskerville/static/LibreBaskerville-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./assets/styles/utils/fonts/Libre_Baskerville/static/LibreBaskerville-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+// ============================================
+// Utility Classes for Font Weights and Styles
+// ============================================
+
+// Font Weight Classes
+.libre-baskerville {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.libre-baskerville-regular {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+}
+
+.libre-baskerville-medium {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 500;
+}
+
+.libre-baskerville-semibold {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 600;
+}
+
+.libre-baskerville-bold {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+}
+
+// Font Style Classes
+.libre-baskerville-italic {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+}
+
+// Combined Classes
+.libre-baskerville-bold-italic {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.libre-baskerville-semibold-italic {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.libre-baskerville-medium-italic {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 500;
+  font-style: italic;
+}

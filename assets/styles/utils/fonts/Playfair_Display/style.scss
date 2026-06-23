@@ -1,0 +1,168 @@
+// Playfair Display Font Imports - Static Variants
+// Import all font weights and styles from the static folder
+
+// Regular (400)
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+// Medium (500)
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+// Semi Bold (600)
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+// Bold (700)
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+// Extra Bold (800)
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+// Black (900)
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/styles/utils/fonts/Playfair_Display/static/PlayfairDisplay-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+// ============================================
+// Utility Classes for Font Weights and Styles
+// ============================================
+
+// Font Weight Classes
+.playfair-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.playfair-display-regular {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.playfair-display-medium {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.playfair-display-semibold {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.playfair-display-bold {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.playfair-display-extrabold {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+}
+
+.playfair-display-black {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+}
+
+// Font Style Classes
+.playfair-display-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+// Combined Classes
+.playfair-display-bold-italic {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.playfair-display-semibold-italic {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.playfair-display-medium-italic {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.playfair-display-extrabold-italic {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.playfair-display-black-italic {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: italic;
+}

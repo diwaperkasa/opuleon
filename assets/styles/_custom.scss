@@ -1,0 +1,52 @@
+/* Custom Utility Classes */
+.tracking-tight {
+    letter-spacing: -0.05em;
+}
+
+.tracking-normal {
+    letter-spacing: 0em;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+}
+
+.tracking-widest {
+    letter-spacing: 0.2em;
+}
+
+.fs-small {
+    font-size: 0.75rem;
+}
+
+.dot-between-item > *:not(:last-child)::after {
+    content: "•";
+    margin: 0 1rem;
+}
+
+.fst-italic-hover {
+    &:hover {
+        font-style: italic;
+    }
+}
+
+.site-header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+.site-header-fixed.show {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+}

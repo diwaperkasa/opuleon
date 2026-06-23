@@ -1,0 +1,36 @@
+@each $name, $color in $theme-colors {
+  .border-#{$name}-hover {
+    transition: border .2s ease-in-out;
+
+    &:hover {
+      border: 1px solid $color !important;
+    }
+  }
+}
+
+@each $name, $color in $theme-colors {
+  .text-#{$name}-hover {
+    transition: color .2s ease;
+
+    &:hover {
+      color: $color !important;
+    }
+  }
+}
+
+@mixin generate-top-utilities($values) {
+  @each $key, $value in $values {
+    .top-#{$key} {
+      top: $value !important;
+    }
+  }
+}
+
+@include generate-top-utilities((
+  0: 0,
+  1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem,
+));
