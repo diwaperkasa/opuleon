@@ -50,3 +50,43 @@
     transform: translateY(0);
     opacity: 1;
 }
+
+.post__content > p:first-of-type::first-letter {
+    font-family: 'Playfair Display';
+    font-size: 52px;
+    margin-right: .5rem;
+    float: left;
+    line-height: 0.85;
+
+    @include media-breakpoint-up(xl) {
+        font-size: 64px;
+    }
+}
+
+.border-center:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.post__content {
+    blockquote {
+        display: flex;
+        font-size: 1.5rem;
+        font-style: italic !important;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        padding-left: 1rem;
+        border-left: 2px solid $warning;
+        margin: 0 0 1rem;
+
+        * {
+            margin: 0;
+        }
+    }
+}

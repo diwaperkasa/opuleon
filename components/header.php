@@ -33,12 +33,6 @@
             </button>
         </nav>
     </div>
-    <div class="d-flex gap-3 align-items-center mb-1">
-        <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide border-bottom border-warning">All</a>
-        <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Journey</a>
-        <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Taste</a>
-        <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Time</a>
-    </div>
 </div>
 <!-- offcanvas -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">

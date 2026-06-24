@@ -9,6 +9,12 @@ function content()
 ?>
     <div class="container">
         <section id="hero-section" class="mb-3">
+            <div class="d-flex gap-3 align-items-center mb-1">
+                <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide border-bottom border-warning">All</a>
+                <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Journey</a>
+                <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Taste</a>
+                <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Time</a>
+            </div>
             <div class="border-bottom">
                 <div class="position-relative bg-dark">
                     <img class="img-fluid w-100" src="https://placehold.co/1980x1080/png" alt="Description of the image"/>

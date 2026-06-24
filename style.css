@@ -913,11 +913,7 @@ progress {
 
 .container,
 .container-fluid,
-.container-xxl,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm {
+.container-xxl {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   width: 100%;
@@ -927,29 +923,9 @@ progress {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
-  .container-sm, .container {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container-md, .container-sm, .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
-  }
-}
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
+    max-width: 1140px;
   }
 }
 :root {
@@ -4116,10 +4092,6 @@ textarea.form-control-lg {
 }
 .navbar > .container,
 .navbar > .container-fluid,
-.navbar > .container-sm,
-.navbar > .container-md,
-.navbar > .container-lg,
-.navbar > .container-xl,
 .navbar > .container-xxl {
   display: flex;
   flex-wrap: inherit;
@@ -12758,4 +12730,42 @@ textarea.form-control-lg {
   visibility: visible;
   transform: translateY(0);
   opacity: 1;
+}
+
+.post__content > p:first-of-type::first-letter {
+  font-family: "Playfair Display";
+  font-size: 52px;
+  margin-right: 0.5rem;
+  float: left;
+  line-height: 0.85;
+}
+@media (min-width: 1200px) {
+  .post__content > p:first-of-type::first-letter {
+    font-size: 64px;
+  }
+}
+
+.border-center:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.post__content blockquote {
+  display: flex;
+  font-size: 1.5rem;
+  font-style: italic !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid #B59A6A;
+  margin: 0 0 1rem;
+}
+.post__content blockquote * {
+  margin: 0;
 }
