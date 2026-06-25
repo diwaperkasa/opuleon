@@ -13,10 +13,8 @@ add_action( 'after_setup_theme', function() {
     remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 
     register_nav_menus([
-        'navbar' => __('Main Navigation'),
-        'home_navbar' => __('Home Navigation'),
-        'offcanvas' => __('Off Canvas'),
-        'footer' => __('Footer'),
+        'offcanvas' => __('Off Canvas Menu'),
+        'footer' => __('Footer Menu'),
     ]);
 });
 

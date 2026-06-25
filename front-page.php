@@ -20,10 +20,10 @@ function content()
     <div class="container">
         <section id="hero-section" class="mb-3">
             <div class="d-flex gap-3 align-items-center mb-1">
-                <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide border-bottom border-warning">All</a>
-                <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Journey</a>
-                <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Taste</a>
-                <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Time</a>
+                <?php $menus = get_wp_menu_tree('secondary') ?>
+                <?php foreach ($menus as $menu): ?>
+                    <a href="<?= $menu->url ?>" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide border-bottom border-warning"><?= $menu->title ?></a>
+                <?php endforeach ?>
             </div>
             <div class="border-bottom">
                 <?php foreach ($featured_post as $post): setup_postdata($post); ?>
@@ -39,7 +39,7 @@ function content()
                         </div>
                         <?php $imageCaption = carbon_get_post_meta(get_the_ID(), 'featured_image_caption'); ?>
                         <?php if ($imageCaption): ?>
-                            <p class="dm-sans">
+                            <p class="dm-sans fs-small">
                                 <span class="opacity-75"><?= esc_html($imageCaption) ?></span>
                             </p>
                         <?php endif; ?>

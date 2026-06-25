@@ -4,21 +4,12 @@
             <a class="navbar-brand text-uppercase playfair-display fw-bold text-warning fs-4 tracking-wide" href="/">OPULEON</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="#">Journey</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="#">Taste</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="#">Time</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="#">Planner</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="#">Newsletter</a>
-                    </li>
+                    <?php $menus = get_wp_menu_tree() ?>
+                    <?php foreach ($menus as $menu): ?>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="<?= $menu->url ?>"><?= $menu->title ?></a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <a class="text-decoration-none navbar-item fw-normal d-none d-lg-block text-uppercase dm-sans text-warning me-1 tracking-wide" href="/studio">Studio
@@ -37,20 +28,18 @@
 <!-- offcanvas -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-uppercase playfair-display text-warning fw-bold">Opuleon</h5>
+        <a href="/" class="text-decoration-none">
+            <h5 class="offcanvas-title text-uppercase playfair-display text-warning fw-bold">Opuleon</h5>
+        </a>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <nav class="nav w-100 h-100 align-items-center">
             <ul class="list-unstyled w-100 text-center mb-0">
-                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Journey</a></li>
-                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Taste</a></li>
-                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Time</a></li>
-                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Planner</a></li>
-                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Newsletter</a></li>
-                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Studio</a></li>
-                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">About</a></li>
-                <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="#">Privacy</a></li>
+                <?php $menus = get_wp_menu_tree('offcanvas') ?>
+                <?php foreach ($menus as $menu): ?>
+                    <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="<?= $menu->url ?>"><?= $menu->title ?></a></li>
+                <?php endforeach; ?>
             </ul>
         </nav>
     </div>
