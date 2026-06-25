@@ -13,8 +13,10 @@ add_action( 'after_setup_theme', function() {
     remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 
     register_nav_menus([
-        'mobile' => __('Mobile'),
+        'navbar' => __('Main Navigation'),
+        'home_navbar' => __('Home Navigation'),
         'offcanvas' => __('Off Canvas'),
+        'footer' => __('Footer'),
     ]);
 });
 
@@ -129,3 +131,16 @@ function wpp_custom_taxonomy_separator($separator)
 }
 
 add_filter('wpp_taxonomy_separator', 'wpp_custom_taxonomy_separator', 10, 1);
+
+function get_reading_time($post_id = null)
+{
+    $post_id = $post_id ?: get_the_ID();
+
+    $content = get_post_field('post_content', $post_id);
+
+    $word_count = str_word_count(
+        wp_strip_all_tags($content)
+    );
+
+    return max(1, ceil($word_count / 200));
+}

@@ -1,4 +1,5 @@
 import bootstrap from 'bootstrap';
+import 'sharer.js';
 
 const header = document.querySelector('.site-header');
 const fixedHeader = document.querySelector('.site-header-fixed');

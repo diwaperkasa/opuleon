@@ -6,6 +6,16 @@ add_action('genesis_loop', 'content');
 
 function content()
 {
+    $query = new WP_Query([
+        'post_type'      => 'post',
+        'post_status'    => 'publish',
+        'posts_per_page' => 10,
+    ]);
+
+    $posts = $query->posts;
+    $featured_post   = array_slice($posts, 0, 1);
+    $secondary_posts = array_slice($posts, 1, 3);
+    $remaining_posts = array_slice($posts, 4, 6);
 ?>
     <div class="container">
         <section id="hero-section" class="mb-3">
@@ -16,82 +26,106 @@ function content()
                 <a href="#" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide">Time</a>
             </div>
             <div class="border-bottom">
-                <div class="position-relative bg-dark">
-                    <img class="img-fluid w-100" src="https://placehold.co/1980x1080/png" alt="Description of the image"/>
-                    <div class="position-absolute bottom-0 start-0 w-100 p-4 text-white dm-sans">
-                        <span class="opacity-75">This is a caption for the image.</span>
+                <?php foreach ($featured_post as $post): setup_postdata($post); ?>
+                    <div class="hero-image">
+                        <div class="hover-image">
+                            <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
+                                <?= get_the_post_thumbnail(
+                                    get_the_ID(),
+                                    'full',
+                                    ['class' => 'img-fluid mb-2']
+                                ); ?>
+                            </a>
+                        </div>
+                        <?php $imageCaption = carbon_get_post_meta(get_the_ID(), 'featured_image_caption'); ?>
+                        <?php if ($imageCaption): ?>
+                            <p class="dm-sans">
+                                <span class="opacity-75"><?= esc_html($imageCaption) ?></span>
+                            </p>
+                        <?php endif; ?>
                     </div>
-                </div>
-                <div class="hero-background">
-                    <div class="d-flex flex-wrap py-2 category-container dot-between-item">
-                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
+                    <div class="hero-background mb-3">
+                        <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
+                        <?php if ($categories): ?>
+                            <div class="d-flex flex-row-reverse justify-content-end flex-wrap py-2 category-container">
+                                <?php $category = $categories[0] ?>
+                                <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
+                                <?php while ($category->parent): ?>
+                                    <?php $category = get_term($category->parent, 'category') ?>
+                                    <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
+                                <?php endwhile ?>
+                            </div>
+                        <?php endif; ?>
+                        <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
+                            <h1 class="playfair-display fw-bold text-dark text-warning-hover"><?php the_title() ?>
+                                <?php if ($italic_title = get_post_meta(get_the_ID(), '_italic_title', true)) : ?>
+                                    <span class="fw-normal fst-italic"><?= esc_html($italic_title) ?></span>
+                                <?php endif; ?>
+                            </h1>
+                        </a>
+                        <?php if ($subtitle = get_the_subtitle(get_the_ID(), '', '', false)) : ?>
+                            <p class="playfair-display fst-italic"><?= esc_html($subtitle) ?></p>
+                        <?php endif; ?>
+                        <div class="d-flex flex-wrap dot-between-item">
+                            <?php $writers = get_the_terms(get_the_ID(), 'writer'); ?>
+                            <?php if ($writers): ?>
+                                <span class="fw-bold dm-sans">By
+                                    <span class="writers comma-between-item">
+                                        <?php foreach ($writers as $writer): ?>
+                                            <a href="<?= get_term_link($writer); ?>" class="text-decoration-none text-dark text-secondary-hover"><?= $writer->name ?></a>
+                                        <?php endforeach ?>
+                                    </span>
+                                </span>
+                            <?php endif; ?>
+                            <span class="dm-sans"><?= get_the_date('j F Y'); ?></span>
+                            <span class="dm-sans"><?= get_reading_time(get_the_ID()) ?> min read</span>
+                        </div>
                     </div>
-                    <h1 class="playfair-display fw-bold">Nishiyama Onsen Keiunkan:
-                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                    </h1>
-                    <p class="playfair-display fst-italic">The world's oldest hotel does not advertise. What its offer cannot be replicated.</p>
-                    <div class="d-flex flex-wrap dot-between-item py-2">
-                        <span class="fw-bold dm-sans">By Alvin Wong</span>
-                        <span class="dm-sans">4 June 2026</span>
-                        <span class="dm-sans">7 min read</span>
-                    </div>
-                </div>
+                <?php endforeach; wp_reset_postdata(); ?>
             </div>
         </section>
         <section id="latest-articles" class="mb-3">
             <h2 class="h6 text-uppercase dm-sans mb-4 h4 fw-normal tracking-wide">Latest Stories</h2>
             <div class="border-bottom">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card mb-3 border-0">
-                            <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                            <div class="card-body px-0">
-                                <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                    <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                    <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                    <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
+                    <?php foreach ($secondary_posts as $post): setup_postdata($post); ?>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card mb-3 border-0">
+                                <div class="hover-image">
+                                    <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
+                                        <?= get_the_post_thumbnail(
+                                            get_the_ID(),
+                                            'large',
+                                            ['class' => 'img-fluid rounded']
+                                        ); ?>
+                                    </a>
                                 </div>
-                                <h3 class="card-title playfair-display fw-bold">Nishiyama Onsen Keiunkan:
-                                    <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                </h3>
-                                <p class="dm-sans">The world's oldest hotel does not advertise. What its offer cannot be replicated.</p>
+                                <div class="card-body px-0">
+                                    <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
+                                    <?php if ($categories): ?>
+                                        <div class="d-flex flex-row-reverse justify-content-end flex-wrap py-2 category-container">
+                                            <?php $category = $categories[0] ?>
+                                            <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
+                                            <?php while ($category->parent): ?>
+                                                <?php $category = get_term($category->parent, 'category') ?>
+                                                <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
+                                            <?php endwhile ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
+                                        <h3 class="card-title playfair-display fw-bold"><?php the_title() ?>
+                                            <?php if ($italic_title = get_post_meta(get_the_ID(), '_italic_title', true)) : ?>
+                                                <span class="fw-normal fst-italic"><?= esc_html($italic_title) ?></span>
+                                            <?php endif; ?>
+                                        </h3>
+                                    </a>
+                                    <?php if ($subtitle = get_the_subtitle(get_the_ID(), '', '', false)) : ?>
+                                        <p class="dm-sans"><?= esc_html($subtitle) ?></p>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card mb-3 border-0">
-                            <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                            <div class="card-body px-0">
-                                <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                    <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                    <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                    <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                </div>
-                                <h3 class="card-title playfair-display fw-bold">Nishiyama Onsen Keiunkan:
-                                    <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                </h3>
-                                <p class="dm-sans">The world's oldest hotel does not advertise. What its offer cannot be replicated.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card mb-3 border-0">
-                            <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                            <div class="card-body px-0">
-                                <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                    <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                    <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                    <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                </div>
-                                <h3 class="card-title playfair-display fw-bold">Nishiyama Onsen Keiunkan:
-                                    <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                </h3>
-                                <p class="dm-sans">The world's oldest hotel does not advertise. What its offer cannot be replicated.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; wp_reset_postdata(); ?>
                 </div>
             </div>
         </section>
@@ -102,141 +136,41 @@ function content()
                         <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                     </div>
                     <div class="row">
-                        <div class="col-6">
-                            <div class="card mb-3 border-0">
-                                <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                <div class="card-body px-0">
-                                    <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
+                        <?php foreach ($remaining_posts as $post): setup_postdata($post); ?>
+                            <div class="col-6">
+                                <div class="card mb-3 border-0">
+                                    <div class="hover-image">
+                                        <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
+                                            <?= get_the_post_thumbnail(
+                                                get_the_ID(),
+                                                'large',
+                                                ['class' => 'img-fluid rounded']
+                                            ); ?>
+                                        </a>
                                     </div>
-                                    <h3 class="card-title playfair-display fw-bold h5">Nishiyama Onsen Keiunkan:
-                                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                    </h3>
+                                    <div class="card-body px-0">
+                                        <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
+                                        <?php if ($categories): ?>
+                                            <div class="d-flex flex-row-reverse justify-content-end flex-wrap py-2 category-container">
+                                                <?php $category = $categories[0] ?>
+                                                <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
+                                                <?php while ($category->parent): ?>
+                                                    <?php $category = get_term($category->parent, 'category') ?>
+                                                    <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
+                                                <?php endwhile ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
+                                            <h3 class="card-title playfair-display fw-bold h5"><?php the_title() ?>
+                                                <?php if ($italic_title = get_post_meta(get_the_ID(), '_italic_title', true)) : ?>
+                                                    <span class="fw-normal fst-italic"><?= esc_html($italic_title) ?></span>
+                                                <?php endif; ?>
+                                            </h3>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card mb-3 border-0">
-                                <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                <div class="card-body px-0">
-                                    <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                    </div>
-                                    <h3 class="card-title playfair-display fw-bold h5">Nishiyama Onsen Keiunkan:
-                                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card mb-3 border-0">
-                                <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                <div class="card-body px-0">
-                                    <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                    </div>
-                                    <h3 class="card-title playfair-display fw-bold h5">Nishiyama Onsen Keiunkan:
-                                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card mb-3 border-0">
-                                <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                <div class="card-body px-0">
-                                    <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                    </div>
-                                    <h3 class="card-title playfair-display fw-bold h5">Nishiyama Onsen Keiunkan:
-                                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card mb-3 border-0">
-                                <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                <div class="card-body px-0">
-                                    <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                    </div>
-                                    <h3 class="card-title playfair-display fw-bold h5">Nishiyama Onsen Keiunkan:
-                                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card mb-3 border-0">
-                                <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                <div class="card-body px-0">
-                                    <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                    </div>
-                                    <h3 class="card-title playfair-display fw-bold h5">Nishiyama Onsen Keiunkan:
-                                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card mb-3 border-0">
-                                <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                <div class="card-body px-0">
-                                    <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                    </div>
-                                    <h3 class="card-title playfair-display fw-bold h5">Nishiyama Onsen Keiunkan:
-                                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card mb-3 border-0">
-                                <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                <div class="card-body px-0">
-                                    <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                    </div>
-                                    <h3 class="card-title playfair-display fw-bold h5">Nishiyama Onsen Keiunkan:
-                                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card mb-3 border-0">
-                                <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                <div class="card-body px-0">
-                                    <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                        <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                    </div>
-                                    <h3 class="card-title playfair-display fw-bold h5">Nishiyama Onsen Keiunkan:
-                                        <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; wp_reset_postdata(); ?>
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -247,11 +181,11 @@ function content()
                             <p class="dm-sans">No aggregation. No list for volume. Editorial Picks for reader who pursue the finest things with curiosity.</p>
                             <form>
                                 <div class="mb-3">
-                                    <input type="email" class="rounded form-control dm-sans" id="email" placeholder="Your email address" required/>
+                                    <input type="email" class="rounded form-control dm-sans" id="email" placeholder="Your email address" required />
                                 </div>
                                 <button type="submit" class="w-100 border-black rounded btn btn-light text-uppercase dm-sans text-warning-hover border-warning-hover">Subscribe
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                                     </svg>
                                 </button>
                             </form>

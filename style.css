@@ -12706,9 +12706,18 @@ textarea.form-control-lg {
   font-size: 0.75rem;
 }
 
+.category-container > *:not(:last-child)::before {
+  content: "•";
+  margin: 0 1rem;
+}
+
 .dot-between-item > *:not(:last-child)::after {
   content: "•";
   margin: 0 1rem;
+}
+
+.comma-between-item > *:not(:last-child)::after {
+  content: ",";
 }
 
 .fst-italic-hover:hover {
@@ -12768,4 +12777,22 @@ textarea.form-control-lg {
 }
 .post__content blockquote * {
   margin: 0;
+}
+.post__content a {
+  text-decoration: underline;
+  color: #B59A6A;
+  text-underline-offset: 5px;
+}
+.post__content .wp-caption {
+  max-width: 100%;
+}
+.post__content .wp-caption-text {
+  font-family: "DM Sans";
+  font-size: 0.75rem;
+  color: var(--bs-secondary);
+}
+.post__content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
 }

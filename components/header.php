@@ -1,7 +1,7 @@
 <div class="container main-navbar">
     <div class="border-bottom mb-2">
         <nav class="navbar navbar-expand-lg align-items-center">
-            <a class="navbar-brand text-uppercase playfair-display fw-bold text-warning fs-4 tracking-wide" href="#">OPULEON</a>
+            <a class="navbar-brand text-uppercase playfair-display fw-bold text-warning fs-4 tracking-wide" href="/">OPULEON</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 align-items-center">
                     <li class="nav-item">
@@ -21,7 +21,7 @@
                     </li>
                 </ul>
             </div>
-            <a class="text-decoration-none navbar-item fw-normal d-none d-lg-block text-uppercase dm-sans text-warning me-1 tracking-wide" href="#">Studio
+            <a class="text-decoration-none navbar-item fw-normal d-none d-lg-block text-uppercase dm-sans text-warning me-1 tracking-wide" href="/studio">Studio
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
                 </svg>
