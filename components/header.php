@@ -4,10 +4,10 @@
             <a class="navbar-brand text-uppercase playfair-display fw-bold text-warning fs-4 tracking-wide" href="/">OPULEON</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 align-items-center">
-                    <?php $menus = get_wp_menu_tree() ?>
+                    <?php $menus = get_wp_menu_tree('primary') ?>
                     <?php foreach ($menus as $menu): ?>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="<?= $menu->url ?>"><?= $menu->title ?></a>
+                            <a class="nav-link text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="<?= $menu['url'] ?>"><?= $menu['title'] ?></a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
@@ -38,7 +38,7 @@
             <ul class="list-unstyled w-100 text-center mb-0">
                 <?php $menus = get_wp_menu_tree('offcanvas') ?>
                 <?php foreach ($menus as $menu): ?>
-                    <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="<?= $menu->url ?>"><?= $menu->title ?></a></li>
+                    <li><a class="text-decoration-none playfair-display text-dark text-warning-hover fst-italic-hover display-5 lh-1 text-uppercase" href="<?= $menu['url'] ?>"><?= $menu['title'] ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </nav>

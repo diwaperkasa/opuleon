@@ -22,7 +22,7 @@ function content()
             <div class="d-flex gap-3 align-items-center mb-1">
                 <?php $menus = get_wp_menu_tree('secondary') ?>
                 <?php foreach ($menus as $menu): ?>
-                    <a href="<?= $menu->url ?>" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide border-bottom border-warning"><?= $menu->title ?></a>
+                    <a href="<?= $menu['url'] ?>" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide border-bottom border-warning"><?= $menu['title'] ?></a>
                 <?php endforeach ?>
             </div>
             <div class="border-bottom">
