@@ -1,4 +1,8 @@
 /* Custom Utility Classes */
+:root {
+    --bs-body-font-family: "DM Sans", var(--bs-font-sans-serif)
+}
+
 .tracking-tight {
     letter-spacing: -0.05em;
 }
@@ -81,6 +85,12 @@
     border-top: 1px solid #ddd;
     transform: translateY(-50%);
     z-index: -1;
+}
+
+.archive-title {
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    font-family: "Playfair Display";
 }
 
 .post__content {
