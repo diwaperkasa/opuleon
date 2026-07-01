@@ -12745,6 +12745,10 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
+.site-inner h1, .site-inner .h1, .site-inner h2, .site-inner .h2, .site-inner h3, .site-inner .h3, .site-inner h4, .site-inner .h4, .site-inner h5, .site-inner .h5, .site-inner h6, .site-inner .h6 {
+  font-family: "Playfair Display";
+}
+
 .post__content > p:first-of-type::first-letter {
   font-family: "Playfair Display";
   font-size: 52px;

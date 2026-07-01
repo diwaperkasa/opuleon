@@ -64,6 +64,12 @@
     opacity: 1;
 }
 
+.site-inner {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display'
+    }
+}
+
 .post__content > p:first-of-type::first-letter {
     font-family: 'Playfair Display';
     font-size: 52px;
