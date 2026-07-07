@@ -132,14 +132,19 @@
     }
 
     img {
-        width: auto;
-        max-height: 500px;
-        // max-width: 100%;
-        // height: auto;
+        max-width: 100%;
+        height: auto;
         margin-bottom: .5rem;
     }
 
     .gallery {
+        img {
+            max-width: unset;
+            width: auto;
+            max-height: 500px;
+            height: unset;
+        }
+
         figure {
             text-align: center;
             width: 100%;
