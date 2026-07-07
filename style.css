@@ -12810,7 +12810,7 @@ textarea.form-control-lg {
   max-height: 500px;
   margin-bottom: 0.5rem;
 }
-.post__content figure {
+.post__content .gallery figure {
   text-align: center;
   width: 100%;
 }
