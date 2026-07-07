@@ -138,11 +138,13 @@
     }
 
     .gallery {
-        img {
-            max-width: unset;
-            width: auto;
-            max-height: 500px;
-            height: unset;
+        .portrait {
+            img {
+                max-width: unset;
+                width: auto;
+                max-height: 500px;
+                height: unset;
+            }
         }
 
         figure {

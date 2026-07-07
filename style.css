@@ -12810,7 +12810,7 @@ textarea.form-control-lg {
   height: auto;
   margin-bottom: 0.5rem;
 }
-.post__content .gallery img {
+.post__content .gallery .portrait img {
   max-width: unset;
   width: auto;
   max-height: 500px;
