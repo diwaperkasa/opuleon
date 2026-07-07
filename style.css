@@ -12820,3 +12820,27 @@ textarea.form-control-lg {
   text-align: center;
   width: 100%;
 }
+.post__content .gallery:hover .flickity-prev-next-button {
+  opacity: 1;
+  visibility: visible;
+}
+.post__content .gallery:hover .next, .post__content .gallery:hover .previous {
+  transform: translateX(0);
+}
+
+.flickity-button:focus {
+  box-shadow: none;
+}
+
+.flickity-prev-next-button {
+  box-shadow: var(--bs-box-shadow) !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.flickity-prev-next-button .next {
+  transform: translateX(100%);
+}
+.flickity-prev-next-button .previous {
+  transform: translateX(-100%);
+}

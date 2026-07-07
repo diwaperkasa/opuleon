@@ -152,4 +152,35 @@
             width: 100%;
         }
     }
+
+    .gallery:hover {
+        .flickity-prev-next-button {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .next, .previous {
+            transform: translateX(0);
+        }
+    }
 }
+
+.flickity-button:focus {
+    box-shadow: none;
+}
+
+.flickity-prev-next-button {
+    box-shadow: var(--bs-box-shadow) !important;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+
+    .next {
+        transform: translateX(100%);
+    }
+
+    .previous {
+        transform: translateX(-100%);
+    }
+}
+
