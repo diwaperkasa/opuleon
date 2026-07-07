@@ -12806,8 +12806,8 @@ textarea.form-control-lg {
   color: var(--bs-secondary);
 }
 .post__content img {
-  max-width: 350px;
-  height: auto;
+  width: auto;
+  max-height: 500px;
   margin-bottom: 0.5rem;
 }
 .post__content figure {
