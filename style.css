@@ -12806,7 +12806,11 @@ textarea.form-control-lg {
   color: var(--bs-secondary);
 }
 .post__content img {
-  max-width: 100%;
+  max-width: 350px;
   height: auto;
   margin-bottom: 0.5rem;
+}
+.post__content figure {
+  text-align: center;
+  width: 100%;
 }
