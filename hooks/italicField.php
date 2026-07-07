@@ -29,8 +29,10 @@ add_action('save_post', function ($post_id) {
 
 function override_title($parts) {
     if (is_single() && $italicTitle = get_post_meta(get_the_ID(), '_italic_title', true)) {
-        $title = $parts['title'];
-        $parts['title'] = join(' ', [$title, $italicTitle]);
+        if (isset($parts['title'])) {
+            $title = $parts['title'];
+            $parts['title'] = join(' ', [$italicTitle, $title]);
+        }
     }
 
     return $parts;
