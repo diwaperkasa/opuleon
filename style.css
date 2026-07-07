@@ -12825,7 +12825,7 @@ textarea.form-control-lg {
   visibility: visible;
 }
 .post__content .gallery:hover .next, .post__content .gallery:hover .previous {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .flickity-button:focus {
@@ -12838,9 +12838,11 @@ textarea.form-control-lg {
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
-.flickity-prev-next-button .next {
-  transform: translateY(100%);
+
+.flickity-prev-next-button.next {
+  transform: translateX(100%);
 }
-.flickity-prev-next-button .previous {
-  transform: translateY(-100%);
+
+.flickity-prev-next-button.previous {
+  transform: translateX(-100%);
 }

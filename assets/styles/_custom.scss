@@ -160,7 +160,7 @@
         }
 
         .next, .previous {
-            transform: translateY(0);
+            transform: translateX(0);
         }
     }
 }
@@ -174,13 +174,13 @@
     visibility: hidden;
     opacity: 0;
     transition: all .3s ease-in-out;
-
-    .next {
-        transform: translateY(100%);
-    }
-
-    .previous {
-        transform: translateY(-100%);
-    }
 }
 
+
+.flickity-prev-next-button.next {
+    transform: translateX(100%);
+}
+
+.flickity-prev-next-button.previous {
+    transform: translateX(-100%);
+}
