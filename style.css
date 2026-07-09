@@ -12817,8 +12817,10 @@ textarea.form-control-lg {
   height: unset;
 }
 .post__content .gallery figure {
-  text-align: center;
   width: 100%;
+}
+.post__content .gallery figure:has(.portrait) {
+  text-align: center;
 }
 .post__content .gallery:hover .flickity-prev-next-button {
   opacity: 1;

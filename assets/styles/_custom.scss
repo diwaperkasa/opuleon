@@ -148,8 +148,11 @@
         }
 
         figure {
-            text-align: center;
             width: 100%;
+        }
+
+        figure:has(.portrait) {
+            text-align: center;
         }
     }
 
