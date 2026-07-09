@@ -7,7 +7,7 @@ add_action('genesis_loop', 'content');
 function content()
 {
     global $post;
-    
+
     $query = new WP_Query([
         'post_type'      => 'post',
         'post_status'    => 'publish',
@@ -28,7 +28,7 @@ function content()
                 <?php endforeach ?>
             </div>
             <div class="border-bottom">
-                <?php foreach ($featured_post as $post): setup_postdata($post); ?>
+                <?php foreach ($featured_post as $featured): $post = $featured; setup_postdata($post); ?>
                     <div class="hero-image">
                         <div class="hover-image">
                             <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
@@ -90,7 +90,7 @@ function content()
             <h2 class="h6 text-uppercase dm-sans mb-4 h4 fw-normal tracking-wide">Latest Stories</h2>
             <div class="border-bottom">
                 <div class="row">
-                    <?php foreach ($secondary_posts as $post): setup_postdata($post); ?>
+                    <?php foreach ($secondary_posts as $secondary): $post = $secondary; setup_postdata($post); ?>
                         <div class="col-lg-4 col-md-6">
                             <div class="card mb-3 border-0">
                                 <div class="hover-image">
@@ -138,7 +138,7 @@ function content()
                         <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                     </div>
                     <div class="row">
-                        <?php foreach ($remaining_posts as $post): setup_postdata($post); ?>
+                        <?php foreach ($remaining_posts as $remaining): $post = $remaining; setup_postdata($post); ?>
                             <div class="col-6">
                                 <div class="card mb-3 border-0">
                                     <div class="hover-image">
