@@ -6,6 +6,8 @@ add_action('genesis_loop', 'content');
 
 function content()
 {
+    global $post;
+    
     $query = new WP_Query([
         'post_type'      => 'post',
         'post_status'    => 'publish',
