@@ -34,7 +34,12 @@
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <nav class="nav w-100 h-100 align-items-center">
+        <div class="py-5">
+            <form action="/" method="get">
+                <input type="search" class="form-control rounded-0 border-0 border-bottom playfair-display px-5" name="s" placeholder="Search" required />
+            </form>
+        </div>
+        <nav class="nav w-100 py-5 align-items-center">
             <ul class="list-unstyled w-100 text-center mb-0">
                 <?php $menus = get_wp_menu_tree('offcanvas') ?>
                 <?php foreach ($menus as $menu): ?>
