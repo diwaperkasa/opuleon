@@ -12185,6 +12185,13 @@ textarea.form-control-lg {
   border: 1px solid #212529 !important;
 }
 
+.border-white-hover {
+  transition: border 0.2s ease-in-out;
+}
+.border-white-hover:hover {
+  border: 1px solid #fff !important;
+}
+
 .text-primary-hover {
   transition: color 0.2s ease;
 }
@@ -12239,6 +12246,13 @@ textarea.form-control-lg {
 }
 .text-dark-hover:hover {
   color: #212529 !important;
+}
+
+.text-white-hover {
+  transition: color 0.2s ease;
+}
+.text-white-hover:hover {
+  color: #fff !important;
 }
 
 .top-0 {

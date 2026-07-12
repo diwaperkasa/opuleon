@@ -1,3 +1,10 @@
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "white": #fff
+  )
+);
+
 @each $name, $color in $theme-colors {
   .border-#{$name}-hover {
     transition: border .2s ease-in-out;

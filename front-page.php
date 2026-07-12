@@ -7,11 +7,13 @@ add_action('genesis_loop', 'content');
 function content()
 {
     global $post;
+    $limit = 10;
 
     $query = new WP_Query([
         'post_type'      => 'post',
         'post_status'    => 'publish',
-        'posts_per_page' => 10,
+        'posts_per_page' => $limit,
+        'paged'          => (int) get_query_var('paged', 1),
     ]);
 
     $posts = $query->posts;
@@ -110,6 +112,9 @@ function content()
                                 <?php get_template_part('components/post-card'); ?>
                             </div>
                         <?php endforeach; wp_reset_postdata(); ?>
+                    </div>
+                    <div class="text-center mb-3">
+                        <button class="btn btn-outline-warning load-more-btn px-5" data-limit="<?= $limit ?>" data-page="2">Load More</button>
                     </div>
                 </div>
                 <div class="col-md-5">
