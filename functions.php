@@ -162,3 +162,51 @@ add_action('pre_get_posts', function($query) {
         $query->set('post_type', 'post');
     }
 });
+
+function more_post()
+{
+    $result = [];
+
+    $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $length = filter_input(INPUT_GET, 'length', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $termId = filter_input(INPUT_GET, 'term', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    $args = [
+        'paged' => $page,
+        'posts_per_page' => $length,
+        'post_status' => 'publish',
+        'post_type' => ['post'],
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'no_found_rows'  => true,
+    ];
+
+    if ($termId) {
+        $args['cat'] = $termId;
+    }
+
+    $query = new WP_Query($args);
+
+    foreach ($query->posts as $row) {
+        global $post;
+        $post = $row;
+        setup_postdata($post);
+        ob_start();
+        get_template_part('components/post-card');
+        $html = ob_get_clean();
+        $result[] = $html;
+        wp_reset_postdata();
+    }
+
+    // Prepare response
+    $response = array(
+        'message' => 'success',
+        'data' => $result,
+    );
+
+    // Send JSON response
+    return wp_send_json($response);
+}
+
+add_action('wp_ajax_more_post', 'more_post');
+add_action('wp_ajax_nopriv_more_post', 'more_post');
