@@ -12870,6 +12870,8 @@ textarea.form-control-lg {
   text-decoration: none;
 }
 .pagination .page-numbers {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
   font-size: 2rem;
   font-family: "Playfair Display";
   color: #B59A6A;

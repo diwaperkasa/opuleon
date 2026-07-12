@@ -152,3 +152,13 @@ function get_reading_time($post_id = null)
 
     return max(1, ceil($word_count / 200));
 }
+
+add_action('pre_get_posts', function($query) {
+    if (
+        !is_admin() &&
+        $query->is_main_query() &&
+        $query->is_search()
+    ) {
+        $query->set('post_type', 'post');
+    }
+});
