@@ -95,61 +95,27 @@ function content()
                         </div>
                     </div>
                     <p class="text-warning text-uppercase dm-sans tracking-wide">Continue Reading</p>
+                    <?php
+                        $args = [
+                            'post_type'         => 'post',
+                            'post_status'       => 'publish',
+                            'posts_per_page'    => 3,
+                            'post__not_in'      => [get_the_ID()],
+                            'orderby'           => 'rand',
+                        ];
+
+                        if ($categories) {
+                            $args['cat'] = $categories[0]->term_id;
+                        }
+
+                        $query = new WP_Query($args);
+                    ?>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="border-top py-3">
-                                <div class="card border-0">
-                                    <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                    <div class="card-body px-0">
-                                        <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                            <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                            <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                            <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                        </div>
-                                        <h3 class="card-title playfair-display fw-bold">Nishiyama Onsen Keiunkan:
-                                            <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                        </h3>
-                                        <p class="dm-sans">The world's oldest hotel does not advertise. What its offer cannot be replicated.</p>
-                                    </div>
-                                </div>
+                        <?php while ($query->have_posts()) : $query->the_post(); ?>
+                            <div class="col-md-4">
+                                <?php get_template_part('components/post-card'); ?>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="border-top py-3">
-                                <div class="card border-0">
-                                    <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                    <div class="card-body px-0">
-                                        <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                            <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                            <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                            <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                        </div>
-                                        <h3 class="card-title playfair-display fw-bold">Nishiyama Onsen Keiunkan:
-                                            <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                        </h3>
-                                        <p class="dm-sans">The world's oldest hotel does not advertise. What its offer cannot be replicated.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="border-top py-3">
-                                <div class="card border-0">
-                                    <img src="https://placehold.co/600x400/png" class="img-fluid rounded" alt="Description of the image"/>
-                                    <div class="card-body px-0">
-                                        <div class="d-flex flex-wrap mb-2 dot-between-item">
-                                            <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Journey</span>
-                                            <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Japan</span>
-                                            <span class="fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small">Ryokan</span>
-                                        </div>
-                                        <h3 class="card-title playfair-display fw-bold">Nishiyama Onsen Keiunkan:
-                                            <span class="fw-normal fst-italic">Thirty-Seven Generations of Uninterrupted Silence</span>
-                                        </h3>
-                                        <p class="dm-sans">The world's oldest hotel does not advertise. What its offer cannot be replicated.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endwhile; wp_reset_postdata(); ?>
                     </div>
                 </footer>
             </article>
