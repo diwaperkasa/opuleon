@@ -92,40 +92,7 @@ function content()
                 <div class="row">
                     <?php foreach ($secondary_posts as $secondary): $post = $secondary; setup_postdata($post); ?>
                         <div class="col-lg-4 col-md-6">
-                            <div class="card mb-3 border-0">
-                                <div class="hover-image">
-                                    <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
-                                        <?= get_the_post_thumbnail(
-                                            get_the_ID(),
-                                            'large',
-                                            ['class' => 'img-fluid rounded']
-                                        ); ?>
-                                    </a>
-                                </div>
-                                <div class="card-body px-0">
-                                    <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
-                                    <?php if ($categories): ?>
-                                        <div class="d-flex flex-row-reverse justify-content-end flex-wrap py-2 category-container">
-                                            <?php $category = $categories[0] ?>
-                                            <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
-                                            <?php while ($category->parent): ?>
-                                                <?php $category = get_term($category->parent, 'category') ?>
-                                                <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
-                                            <?php endwhile ?>
-                                        </div>
-                                    <?php endif; ?>
-                                    <a href="<?= get_the_permalink() ?>" class="text-decoration-none text-dark text-warning-hover">
-                                        <h3 class="card-title playfair-display fw-bold"><?php the_title() ?>
-                                            <?php if ($italic_title = get_post_meta(get_the_ID(), '_italic_title', true)) : ?>
-                                                <span class="fw-normal fst-italic"><?= esc_html($italic_title) ?></span>
-                                            <?php endif; ?>
-                                        </h3>
-                                    </a>
-                                    <?php if ($subtitle = get_the_subtitle(get_the_ID(), '', '', false)) : ?>
-                                        <p class="dm-sans"><?= esc_html($subtitle) ?></p>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
+                            <?php get_template_part('components/post-card'); ?>
                         </div>
                     <?php endforeach; wp_reset_postdata(); ?>
                 </div>
@@ -140,37 +107,7 @@ function content()
                     <div class="row">
                         <?php foreach ($remaining_posts as $remaining): $post = $remaining; setup_postdata($post); ?>
                             <div class="col-6">
-                                <div class="card mb-3 border-0">
-                                    <div class="hover-image">
-                                        <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
-                                            <?= get_the_post_thumbnail(
-                                                get_the_ID(),
-                                                'large',
-                                                ['class' => 'img-fluid rounded']
-                                            ); ?>
-                                        </a>
-                                    </div>
-                                    <div class="card-body px-0">
-                                        <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
-                                        <?php if ($categories): ?>
-                                            <div class="d-flex flex-row-reverse justify-content-end flex-wrap py-2 category-container">
-                                                <?php $category = $categories[0] ?>
-                                                <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
-                                                <?php while ($category->parent): ?>
-                                                    <?php $category = get_term($category->parent, 'category') ?>
-                                                    <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
-                                                <?php endwhile ?>
-                                            </div>
-                                        <?php endif; ?>
-                                        <a href="<?= get_the_permalink() ?>" class="text-decoration-none text-dark text-warning-hover">
-                                            <h3 class="card-title playfair-display fw-bold h5"><?php the_title() ?>
-                                                <?php if ($italic_title = get_post_meta(get_the_ID(), '_italic_title', true)) : ?>
-                                                    <span class="fw-normal fst-italic"><?= esc_html($italic_title) ?></span>
-                                                <?php endif; ?>
-                                            </h3>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php get_template_part('components/post-card'); ?>
                             </div>
                         <?php endforeach; wp_reset_postdata(); ?>
                     </div>
