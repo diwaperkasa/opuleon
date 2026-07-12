@@ -106,7 +106,7 @@ function content()
                     <div class="border-bottom mb-3">
                         <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                     </div>
-                    <div class="row">
+                    <div class="row post-archive-container">
                         <?php foreach ($remaining_posts as $remaining): $post = $remaining; setup_postdata($post); ?>
                             <div class="col-6">
                                 <?php get_template_part('components/post-card'); ?>
@@ -120,7 +120,6 @@ function content()
                                 <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"></path>
                             </svg>
                         </button>
-
                     </div>
                 </div>
                 <div class="col-md-5">
