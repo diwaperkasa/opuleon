@@ -61,6 +61,8 @@ if (loadMoreBtn) {
                 return response.json();
             });
 
+        if (!res.data.length) return;
+
         const articleContainer = document.querySelector('.post-archive-container');
 
         if (!articleContainer) return;
