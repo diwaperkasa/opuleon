@@ -187,3 +187,22 @@
 .flickity-prev-next-button.previous {
     transform: translateX(-100%);
 }
+
+.pagination {
+    justify-content: center;
+
+    a {
+        text-decoration: none;
+    }
+
+    .page-numbers {
+        font-size: 2rem;
+        font-family: 'Playfair Display';
+        color: $warning;
+    }
+
+    .current {
+        --bs-text-opacity: 1;
+        color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+    }
+}
