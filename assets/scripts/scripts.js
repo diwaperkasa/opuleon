@@ -32,51 +32,49 @@ const loadMoreBtn = document.querySelector('.load-more-btn');
 
 if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', async (e) => {
-        try {
-            const limit = e.currentTarget.dataset.limit;
-            const page = e.currentTarget.dataset.page;
-            const args = {
-                action: 'more_post',
-                page: page,
-                length: limit,
-            }
-            const term = e.currentTarget.dataset.term;
+    const button = e.currentTarget; // simpan referensi
 
-            if (term) {
-                args.term_id = term;
-            }
+    try {
+        const limit = button.dataset.limit;
+        let page = parseInt(button.dataset.page, 10);
+        const term = button.dataset.term;
+        const className = button.dataset.class;
 
-            loadMoreBtn.disabled = true;
+        const args = {
+            action: 'more_post',
+            page,
+            length: limit,
+        };
 
-            const res = await fetch(`/wp-admin/admin-ajax.php?${new URLSearchParams(args)}`, {
-                    headers: {
-                        "Content-type": "application/json"
-                    }
-                }).then(async (response) => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
+        if (term) {
+            args.term_id = term;
+        }
 
-                    return await response.json()
-                });
+        button.disabled = true;
 
-            const articleContainer = document.querySelector('.post-archive-container')
+        const res = await fetch(`/wp-admin/admin-ajax.php?${new URLSearchParams(args)}`)
+            .then(async (response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
 
-            if (!articleContainer) return;
-
-            const className = e.currentTarget.dataset.class;
-
-            res.data.forEach((row) => {
-                articleContainer.insertAdjacentHTML('beforeend', `<div class="${className}">${row}</div>`)
+                return response.json();
             });
 
-            e.currentTarget.dataset.page = ++page;
+        const articleContainer = document.querySelector('.post-archive-container');
 
-            console.log(e.currentTarget.dataset.page)
-        } catch (error) {
-            console.log(error)
-        } finally {
-            loadMoreBtn.disabled = false;
-        }
-    });
+        if (!articleContainer) return;
+
+        res.data.forEach((row) => {
+            articleContainer.insertAdjacentHTML(
+                'beforeend',
+                `<div class="${className}">${row}</div>`
+            );
+        });
+
+        button.dataset.page = ++page;
+    } catch (error) {} finally {
+        button.disabled = false;
+    }
+});
 }
