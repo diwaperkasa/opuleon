@@ -11,7 +11,7 @@
     <div class="card-body px-0">
         <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
         <?php if ($categories): ?>
-            <div class="d-flex flex-row-reverse justify-content-end flex-wrap py-2 category-container">
+            <div class="d-flex flex-row-reverse justify-content-end flex-wrap category-container">
                 <?php $category = $categories[0] ?>
                 <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
                 <?php while ($category->parent): ?>
