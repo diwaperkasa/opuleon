@@ -46,7 +46,7 @@ function content()
                             </p>
                         <?php endif; ?>
                     </div>
-                    <div class="hero-background mb-3">
+                    <div class="hero-background mb-3 py-1 mb-2">
                         <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
                         <?php if ($categories): ?>
                             <div class="d-flex flex-row-reverse justify-content-end flex-wrap category-container">

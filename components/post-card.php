@@ -41,8 +41,6 @@
                     </span>
                 </span>
             <?php endif; ?>
-            <span class="dm-sans"><?= get_the_date('j F Y'); ?></span>
-            <span class="dm-sans"><?= get_reading_time(get_the_ID()) ?> min read</span>
         </div>
     </div>
 </div>
