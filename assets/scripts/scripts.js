@@ -27,3 +27,52 @@ window.addEventListener("scroll", () => {
         });
     });
 });
+
+const loadMoreBtn = document.querySelector('.load-more-btn');
+
+if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', async (e) => {
+        try {
+            const limit = e.currentTarget.dataset.limit;
+            const page = e.currentTarget.dataset.page;
+            const args = {
+                action: 'more_post',
+                page: page,
+                length: limit,
+            }
+            const term = e.currentTarget.dataset.term;
+
+            if (term) {
+                args.term_id = term;
+            }
+
+            e.currentTarget.disabled = true;
+
+            const res = await fetch(`/wp-admin/admin-ajax.php?${new URLSearchParams(args)}`, {
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                }).then(async (response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    return await response.json()
+                });
+
+            const articleContainer = document.querySelector('.post-archive-container')
+
+            if (!articleContainer) return;
+
+            const className = e.currentTarget.dataset.class;
+
+            res.data.forEach((row) => {
+                articleContainer.insertAdjacentHTML('beforeend', `<div class="${className}">${row}</div>`)
+            });
+
+            e.currentTarget.dataset.page = ++page;
+        } catch (error) {} finally {
+            e.currentTarget.disabled = false;
+        }
+    });
+}
