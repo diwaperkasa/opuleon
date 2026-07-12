@@ -11,7 +11,7 @@ function content()
     <div class="container">
         <div class="d-flex flex-row-reverse justify-content-center flex-wrap py-2 category-container mb-3">
             <?php $category = $term ?>
-            <h1 class="m-0 p-0 playfair-display fst-italic"><a href="<?= get_term_link($category); ?>" class="text-decoration-none text-warning text-uppercase dm-sans fw-light tracking-wide"><?= $category->name ?></a></h1>
+            <h1 class="m-0 p-0 playfair-display fst-italic"><a href="<?= get_term_link($category); ?>" class="text-decoration-none text-warning text-uppercase fw-light tracking-wide"><?= $category->name ?></a></h1>
             <?php while ($category->parent): ?>
                 <?php $category = get_term($category->parent, 'category') ?>
                 <h2 class="m-0 p-0 fs-small"><a href="<?= get_term_link($category); ?>" class="text-decoration-none text-warning text-uppercase dm-sans fw-light tracking-wide"><?= $category->name ?></a></h2>
