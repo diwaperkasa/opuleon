@@ -46,7 +46,7 @@ if (loadMoreBtn) {
                 args.term_id = term;
             }
 
-            e.currentTarget.disabled = true;
+            loadMoreBtn.disabled = true;
 
             const res = await fetch(`/wp-admin/admin-ajax.php?${new URLSearchParams(args)}`, {
                     headers: {
@@ -72,7 +72,7 @@ if (loadMoreBtn) {
 
             e.currentTarget.dataset.page = ++page;
         } catch (error) {} finally {
-            e.currentTarget.disabled = false;
+            loadMoreBtn.disabled = false;
         }
     });
 }
