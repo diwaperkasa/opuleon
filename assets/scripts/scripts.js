@@ -73,7 +73,9 @@ if (loadMoreBtn) {
             e.currentTarget.dataset.page = ++page;
 
             console.log(e.currentTarget.dataset.page)
-        } catch (error) {} finally {
+        } catch (error) {
+            console.log(error)
+        } finally {
             loadMoreBtn.disabled = false;
         }
     });
