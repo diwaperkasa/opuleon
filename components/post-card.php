@@ -30,5 +30,19 @@
         <?php if ($subtitle = get_the_subtitle(get_the_ID(), '', '', false)) : ?>
             <p class="dm-sans"><?= esc_html($subtitle) ?></p>
         <?php endif; ?>
+        <div class="d-flex flex-wrap dot-between-item">
+            <?php $writers = get_the_terms(get_the_ID(), 'writer'); ?>
+            <?php if ($writers): ?>
+                <span class="fw-bold dm-sans">By
+                    <span class="writers comma-between-item">
+                        <?php foreach ($writers as $writer): ?>
+                            <a href="<?= get_term_link($writer); ?>" class="text-decoration-none text-dark text-secondary-hover"><?= $writer->name ?></a>
+                        <?php endforeach ?>
+                    </span>
+                </span>
+            <?php endif; ?>
+            <span class="dm-sans"><?= get_the_date('j F Y'); ?></span>
+            <span class="dm-sans"><?= get_reading_time(get_the_ID()) ?> min read</span>
+        </div>
     </div>
 </div>
