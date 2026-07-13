@@ -1,5 +1,5 @@
 <div class="main-navbar">
-    <nav class="navbar navbar-expand-lg align-items-center m-0">
+    <nav class="navbar navbar-expand-lg align-items-center m-0 border-bottom">
         <div class="container">
             <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-5">
                 <li class="nav-item">
