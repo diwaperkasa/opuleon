@@ -112,19 +112,21 @@ function content()
             ]);
             $index = 0;
             ?>
-            <div class="container">
-                <div class="row">
-                    <?php while ($category_posts_query->have_posts()): $category_posts_query->the_post(); ?>
-                        <?php if ($category_posts_query->current_post == 0): ?>
-                            <div class="col-12">
-                                <?php get_template_part('components/post-card', 'landscape'); ?>
-                            </div>
-                        <?php else: ?>
-                            <div class="col-lg-4 col-md-6">
-                                <?php get_template_part('components/post-card', 'list'); ?>
-                            </div>
-                        <?php endif ?>
-                    <?php endwhile; wp_reset_postdata(); ?>
+            <div class="border-bottom">
+                <div class="container">
+                    <div class="row">
+                        <?php while ($category_posts_query->have_posts()): $category_posts_query->the_post(); ?>
+                            <?php if ($category_posts_query->current_post == 0): ?>
+                                <div class="col-12">
+                                    <?php get_template_part('components/post-card', 'landscape'); ?>
+                                </div>
+                            <?php else: ?>
+                                <div class="col-lg-4 col-md-6">
+                                    <?php get_template_part('components/post-card', 'list'); ?>
+                                </div>
+                            <?php endif ?>
+                        <?php endwhile; wp_reset_postdata(); ?>
+                    </div>
                 </div>
             </div>
         </section>
