@@ -39,4 +39,36 @@ function override_title($parts) {
 }
 
 add_filter('document_title_parts', 'override_title');
-add_filter('wpseo_title', 'override_title');
+
+add_action('wpseo_register_extra_replacements', function () {
+    wpseo_register_var_replacement(
+        '%%italic_title%%',
+        function () {
+            if (!is_singular('post')) {
+                return '';
+            }
+
+            return trim(get_post_meta(get_the_ID(), '_italic_title', true));
+        },
+        'advanced',
+        'Italic title'
+    );
+});
+
+add_filter('wpseo_metadesc', function ($description) {
+    if (!is_singular('post')) {
+        return $description;
+    }
+
+    if (!empty(trim($description))) {
+        return $description;
+    }
+
+    $subtitle = trim(get_the_subtitle(get_the_ID(), '', '', false));
+
+    if (!empty($subtitle)) {
+        return wp_strip_all_tags($subtitle);
+    }
+
+    return has_excerpt() ? get_the_excerpt() : $description;
+});
