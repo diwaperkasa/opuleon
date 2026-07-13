@@ -1,6 +1,6 @@
 <footer>
-    <div class="container">
-        <div class="border-top">
+    <div class="border-top">
+        <div class="container">
             <div class="d-flex justify-content-between align-items-center py-3">
                 <a href="/" class="text-decoration-none">
                     <p class="mb-0 text-warning text-uppercase playfair-display fw-bold">Opuleon</p>
