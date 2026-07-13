@@ -1,4 +1,4 @@
-<div class="main-navbar mb-2">
+<div class="main-navbar">
     <nav class="navbar navbar-expand-lg align-items-center">
         <div class="container">
             <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-5">
@@ -21,7 +21,7 @@
             <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide" href="/studio">Subscribe</a>
         </div>
     </nav>
-    <nav class="overflow-auto">
+    <nav class="overflow-auto pb-2">
         <div class="container">
             <ul class="nav nav-pills flex-nowrap justify-content-center">
                 <?php $menus = get_wp_menu_tree('primary') ?>
