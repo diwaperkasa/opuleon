@@ -35,7 +35,7 @@
     </nav>
 </div>
 <!-- offcanvas -->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
     <div class="offcanvas-header">
         <a href="/" class="text-decoration-none">
             <h5 class="offcanvas-title text-uppercase playfair-display text-warning fw-bold">Opuleon</h5>
