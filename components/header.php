@@ -1,7 +1,7 @@
 <div class="main-navbar">
     <nav class="navbar navbar-expand-lg align-items-center p-0 m-0 border-bottom">
         <div class="container">
-            <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-md-4">
+            <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-md-4 top-menu">
                 <li class="nav-item">
                     <button class="btn btn-light search-btn ms-n2 nav-btn nav-btn p-0 m-0 rounded-circle" style="--bs-btn-bg: #FFF; --bs-btn-border-color: #FFF; --bs-btn-hover-bg: rgb(245,245, 245); --bs-btn-hover-border-color: rgb(245,245, 245);">
                         <svg class="m-0 p-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -14,6 +14,14 @@
                         <svg class="m-0 p-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                         </svg>
+                    </button>
+                </li>
+                <li class="nav-item cancel-box d-none">
+                    <button class="btn btn-light search-btn cancel-btn p-0 px-3 m-0 rounded-pill" style="--bs-btn-bg: #FFF; --bs-btn-border-color: #FFF; --bs-btn-hover-bg: rgb(245,245, 245); --bs-btn-hover-border-color: rgb(245,245, 245);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                        </svg>
+                        <span class="fs-small text-uppercase">Cancel</span>
                     </button>
                 </li>
             </ul>

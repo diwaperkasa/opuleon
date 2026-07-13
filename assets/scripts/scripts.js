@@ -99,5 +99,17 @@ searchBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
         const searchContainer = document.querySelector('.search-container');
         searchContainer.classList.toggle('show');
+
+        const primaryBtn = document.querySelectorAll('.top-menu .nav-item:not(.cancel-box)')
+
+        primaryBtn.forEach((btn) => {
+            btn.classList.toggle('d-none');
+        })
+
+        const closeBtn = document.querySelectorAll('.top-menu .cancel-box')
+
+        closeBtn.forEach((btn) => {
+            btn.classList.toggle('d-none');
+        })
     })
 })
