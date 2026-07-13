@@ -112,7 +112,7 @@ function content()
             ]);
             $index = 0;
             ?>
-            <div class="border-bottom">
+            <div class="border-bottom mb-4">
                 <div class="container">
                     <div class="row">
                         <?php while ($category_posts_query->have_posts()): $category_posts_query->the_post(); ?>
