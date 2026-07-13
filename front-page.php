@@ -162,7 +162,7 @@ function content()
                     <div class="row post-archive-container">
                         <?php foreach ($remaining_posts as $remaining): $post = $remaining; setup_postdata($post); ?>
                             <div class="col-6">
-                                <?php get_template_part('components/post-card'); ?>
+                                <?php get_template_part('components/post-card', 'archive'); ?>
                             </div>
                         <?php endforeach; wp_reset_postdata(); ?>
                     </div>
