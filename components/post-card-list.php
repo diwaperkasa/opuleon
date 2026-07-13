@@ -1,4 +1,4 @@
-<div class="card mb-3 border-0">
+<div class="card mb-0 mb-md-3 border-0">
     <div class="card-body px-0">
         <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
         <?php if ($categories): ?>
