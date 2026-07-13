@@ -168,8 +168,12 @@ function content()
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="h-100 border-md-left p-0 p-md-4">
-                        <?php get_template_part('components/newsletter'); ?>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-6">
+                            <div class="h-100 border-lg-left p-0 p-lg-4">
+                                <?php get_template_part('components/newsletter'); ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
