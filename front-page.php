@@ -83,7 +83,9 @@ function content()
             </div>
         </section>
         <section id="latest-articles" class="mb-3">
-            <h2 class="h6 text-uppercase dm-sans mb-4 h4 fw-normal tracking-wide">Latest Stories</h2>
+            <div class="sticky-top top-8 bg-white mb-4">
+                <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
+            </div>
             <div class="border-bottom">
                 <div class="row">
                     <?php foreach ($secondary_posts as $secondary): $post = $secondary; setup_postdata($post); ?>
