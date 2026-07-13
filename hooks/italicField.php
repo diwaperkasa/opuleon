@@ -55,7 +55,8 @@ add_action('wpseo_register_extra_replacements', function () {
     );
 });
 
-add_filter('wpseo_metadesc', function ($description) {
+function opuleon_default_description(string $description)
+{
     if (!is_singular('post')) {
         return $description;
     }
@@ -66,9 +67,9 @@ add_filter('wpseo_metadesc', function ($description) {
 
     $subtitle = trim(get_the_subtitle(get_the_ID(), '', '', false));
 
-    if (!empty($subtitle)) {
-        return wp_strip_all_tags($subtitle);
-    }
+    return $subtitle !== '' ? wp_strip_all_tags($subtitle) : $description;
+}
 
-    return has_excerpt() ? get_the_excerpt() : $description;
-});
+add_filter('wpseo_metadesc', 'opuleon_default_description');
+add_filter('wpseo_opengraph_desc', 'opuleon_default_description');
+add_filter('wpseo_twitter_description', 'opuleon_default_description');
