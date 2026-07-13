@@ -1,4 +1,4 @@
-<div class="rounded-3 bg-light p-3 sticky-top top-8-40">
+<div class="rounded-3 bg-light p-3 sticky-top top-section">
     <p class="text-warning dm-sans text-uppercase tracking-wide">The Opuleon Letter</p>
     <p class="h4 playfair-display">One considered read, once a week.</p>
     <p class="dm-sans">No aggregation. No list for volume. Editorial Picks for reader who pursue the finest things with curiosity.</p>

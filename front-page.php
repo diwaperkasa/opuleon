@@ -82,7 +82,7 @@ function content()
             </div>
     </section>
     <section id="latest-articles" class="mb-4">
-        <div class="sticky-top top-8-40 bg-white pb-1 mb-3">
+        <div class="sticky-top top-section bg-white pb-1 mb-3">
             <div class="container">
                 <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
             </div>
@@ -113,7 +113,7 @@ function content()
             $category = get_term($row['category_id'], 'category');
             ?>
             <div class="border-bottom mb-4">
-                <div class="border-bottom mb-3 sticky-top top-8-40 bg-white">
+                <div class="border-bottom mb-3 sticky-top top-section bg-white">
                     <div class="container">
                         <div class="d-flex justify-content-between pb-1">
                             <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide m-0 p-0">More from <?= $category->name ?></h2>
@@ -148,7 +148,7 @@ function content()
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="border-bottom mb-3 sticky-top top-8-40 bg-white">
+                    <div class="border-bottom mb-3 sticky-top top-section bg-white">
                         <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                     </div>
                     <div class="row post-archive-container">

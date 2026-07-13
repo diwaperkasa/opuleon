@@ -16,6 +16,13 @@ window.addEventListener("scroll", () => {
     // }
 });
 
+window.addEventListener('resize', () => {
+    document.documentElement.style.setProperty(
+        '--navbar-height',
+        `${header.offsetHeight}px`
+    );
+});
+
 const galleries = document.querySelectorAll('.gallery');
 
 galleries.forEach((gallery) => {

@@ -1,7 +1,7 @@
 <div class="main-navbar">
-    <nav class="navbar navbar-expand-lg align-items-center m-0 border-bottom">
+    <nav class="navbar navbar-expand-lg align-items-center p-0 m-0 border-bottom">
         <div class="container">
-            <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-5">
+            <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-4">
                 <li class="nav-item">
                     <button class="fw-normal btn text-dark ps-0 pe-2 search-btn">
                         <svg class="m-0 p-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
