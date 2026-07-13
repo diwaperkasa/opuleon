@@ -1,4 +1,4 @@
-<div class="card mb-3 border-0">
+<div class="card mb-0 mb-md-3 border-0">
     <div class="row">
         <div class="col-md-6">
             <div class="hover-image">
