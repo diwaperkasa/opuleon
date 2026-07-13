@@ -18,13 +18,13 @@ window.addEventListener("scroll", () => {
 
 document.documentElement.style.setProperty(
     '--navbar-height',
-    `${Math.floor(header.offsetHeight)}px`
+    `${header.offsetHeight - 1}px`
 );
 
 window.addEventListener('resize', () => {
     document.documentElement.style.setProperty(
         '--navbar-height',
-        `${header.offsetHeight}px`
+        `${header.offsetHeight - 1}px`
     );
 });
 
