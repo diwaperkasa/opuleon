@@ -77,3 +77,59 @@ $borders: (
     }
   }
 }
+
+@each $bp in $breakpoints {
+  @include media-breakpoint-up($bp) {
+    // Bootstrap theme colors
+    @each $color, $value in $theme-colors {
+      .bg-#{$bp}-#{$color} {
+        background-color: $value !important;
+      }
+    }
+    // White
+    .bg-#{$bp}-white {
+      background-color: $white !important;
+    }
+    // Transparent
+    .bg-#{$bp}-transparent {
+      background-color: transparent !important;
+    }
+  }
+}
+
+@each $bp in $breakpoints {
+  @include media-breakpoint-up($bp) {
+
+    // Bootstrap theme colors
+    @each $color, $value in $theme-colors {
+      .text-#{$bp}-#{$color} {
+        color: $value !important;
+      }
+    }
+
+    // White
+    .text-#{$bp}-white {
+      color: $white !important;
+    }
+
+    // Black
+    .text-#{$bp}-black {
+      color: $black !important;
+    }
+
+    // Body color
+    .text-#{$bp}-body {
+      color: var(--bs-body-color) !important;
+    }
+
+    // Muted / Secondary
+    .text-#{$bp}-muted {
+      color: var(--bs-secondary-color) !important;
+    }
+
+    // Reset
+    .text-#{$bp}-reset {
+      color: inherit !important;
+    }
+  }
+}

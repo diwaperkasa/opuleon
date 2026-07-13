@@ -13217,6 +13217,401 @@ textarea.form-control-lg {
     border-left: 0 !important;
   }
 }
+@media (min-width: 576px) {
+  .bg-sm-primary {
+    background-color: #0d6efd !important;
+  }
+  .bg-sm-secondary {
+    background-color: #6c757d !important;
+  }
+  .bg-sm-success {
+    background-color: #198754 !important;
+  }
+  .bg-sm-info {
+    background-color: #0dcaf0 !important;
+  }
+  .bg-sm-warning {
+    background-color: #B59A6A !important;
+  }
+  .bg-sm-danger {
+    background-color: #dc3545 !important;
+  }
+  .bg-sm-light {
+    background-color: #F4F4ED !important;
+  }
+  .bg-sm-dark {
+    background-color: #212529 !important;
+  }
+  .bg-sm-white {
+    background-color: #fff !important;
+  }
+  .bg-sm-white {
+    background-color: #fff !important;
+  }
+  .bg-sm-transparent {
+    background-color: transparent !important;
+  }
+}
+@media (min-width: 768px) {
+  .bg-md-primary {
+    background-color: #0d6efd !important;
+  }
+  .bg-md-secondary {
+    background-color: #6c757d !important;
+  }
+  .bg-md-success {
+    background-color: #198754 !important;
+  }
+  .bg-md-info {
+    background-color: #0dcaf0 !important;
+  }
+  .bg-md-warning {
+    background-color: #B59A6A !important;
+  }
+  .bg-md-danger {
+    background-color: #dc3545 !important;
+  }
+  .bg-md-light {
+    background-color: #F4F4ED !important;
+  }
+  .bg-md-dark {
+    background-color: #212529 !important;
+  }
+  .bg-md-white {
+    background-color: #fff !important;
+  }
+  .bg-md-white {
+    background-color: #fff !important;
+  }
+  .bg-md-transparent {
+    background-color: transparent !important;
+  }
+}
+@media (min-width: 992px) {
+  .bg-lg-primary {
+    background-color: #0d6efd !important;
+  }
+  .bg-lg-secondary {
+    background-color: #6c757d !important;
+  }
+  .bg-lg-success {
+    background-color: #198754 !important;
+  }
+  .bg-lg-info {
+    background-color: #0dcaf0 !important;
+  }
+  .bg-lg-warning {
+    background-color: #B59A6A !important;
+  }
+  .bg-lg-danger {
+    background-color: #dc3545 !important;
+  }
+  .bg-lg-light {
+    background-color: #F4F4ED !important;
+  }
+  .bg-lg-dark {
+    background-color: #212529 !important;
+  }
+  .bg-lg-white {
+    background-color: #fff !important;
+  }
+  .bg-lg-white {
+    background-color: #fff !important;
+  }
+  .bg-lg-transparent {
+    background-color: transparent !important;
+  }
+}
+@media (min-width: 1200px) {
+  .bg-xl-primary {
+    background-color: #0d6efd !important;
+  }
+  .bg-xl-secondary {
+    background-color: #6c757d !important;
+  }
+  .bg-xl-success {
+    background-color: #198754 !important;
+  }
+  .bg-xl-info {
+    background-color: #0dcaf0 !important;
+  }
+  .bg-xl-warning {
+    background-color: #B59A6A !important;
+  }
+  .bg-xl-danger {
+    background-color: #dc3545 !important;
+  }
+  .bg-xl-light {
+    background-color: #F4F4ED !important;
+  }
+  .bg-xl-dark {
+    background-color: #212529 !important;
+  }
+  .bg-xl-white {
+    background-color: #fff !important;
+  }
+  .bg-xl-white {
+    background-color: #fff !important;
+  }
+  .bg-xl-transparent {
+    background-color: transparent !important;
+  }
+}
+@media (min-width: 1400px) {
+  .bg-xxl-primary {
+    background-color: #0d6efd !important;
+  }
+  .bg-xxl-secondary {
+    background-color: #6c757d !important;
+  }
+  .bg-xxl-success {
+    background-color: #198754 !important;
+  }
+  .bg-xxl-info {
+    background-color: #0dcaf0 !important;
+  }
+  .bg-xxl-warning {
+    background-color: #B59A6A !important;
+  }
+  .bg-xxl-danger {
+    background-color: #dc3545 !important;
+  }
+  .bg-xxl-light {
+    background-color: #F4F4ED !important;
+  }
+  .bg-xxl-dark {
+    background-color: #212529 !important;
+  }
+  .bg-xxl-white {
+    background-color: #fff !important;
+  }
+  .bg-xxl-white {
+    background-color: #fff !important;
+  }
+  .bg-xxl-transparent {
+    background-color: transparent !important;
+  }
+}
+@media (min-width: 576px) {
+  .text-sm-primary {
+    color: #0d6efd !important;
+  }
+  .text-sm-secondary {
+    color: #6c757d !important;
+  }
+  .text-sm-success {
+    color: #198754 !important;
+  }
+  .text-sm-info {
+    color: #0dcaf0 !important;
+  }
+  .text-sm-warning {
+    color: #B59A6A !important;
+  }
+  .text-sm-danger {
+    color: #dc3545 !important;
+  }
+  .text-sm-light {
+    color: #F4F4ED !important;
+  }
+  .text-sm-dark {
+    color: #212529 !important;
+  }
+  .text-sm-white {
+    color: #fff !important;
+  }
+  .text-sm-white {
+    color: #fff !important;
+  }
+  .text-sm-black {
+    color: #000 !important;
+  }
+  .text-sm-body {
+    color: var(--bs-body-color) !important;
+  }
+  .text-sm-muted {
+    color: var(--bs-secondary-color) !important;
+  }
+  .text-sm-reset {
+    color: inherit !important;
+  }
+}
+@media (min-width: 768px) {
+  .text-md-primary {
+    color: #0d6efd !important;
+  }
+  .text-md-secondary {
+    color: #6c757d !important;
+  }
+  .text-md-success {
+    color: #198754 !important;
+  }
+  .text-md-info {
+    color: #0dcaf0 !important;
+  }
+  .text-md-warning {
+    color: #B59A6A !important;
+  }
+  .text-md-danger {
+    color: #dc3545 !important;
+  }
+  .text-md-light {
+    color: #F4F4ED !important;
+  }
+  .text-md-dark {
+    color: #212529 !important;
+  }
+  .text-md-white {
+    color: #fff !important;
+  }
+  .text-md-white {
+    color: #fff !important;
+  }
+  .text-md-black {
+    color: #000 !important;
+  }
+  .text-md-body {
+    color: var(--bs-body-color) !important;
+  }
+  .text-md-muted {
+    color: var(--bs-secondary-color) !important;
+  }
+  .text-md-reset {
+    color: inherit !important;
+  }
+}
+@media (min-width: 992px) {
+  .text-lg-primary {
+    color: #0d6efd !important;
+  }
+  .text-lg-secondary {
+    color: #6c757d !important;
+  }
+  .text-lg-success {
+    color: #198754 !important;
+  }
+  .text-lg-info {
+    color: #0dcaf0 !important;
+  }
+  .text-lg-warning {
+    color: #B59A6A !important;
+  }
+  .text-lg-danger {
+    color: #dc3545 !important;
+  }
+  .text-lg-light {
+    color: #F4F4ED !important;
+  }
+  .text-lg-dark {
+    color: #212529 !important;
+  }
+  .text-lg-white {
+    color: #fff !important;
+  }
+  .text-lg-white {
+    color: #fff !important;
+  }
+  .text-lg-black {
+    color: #000 !important;
+  }
+  .text-lg-body {
+    color: var(--bs-body-color) !important;
+  }
+  .text-lg-muted {
+    color: var(--bs-secondary-color) !important;
+  }
+  .text-lg-reset {
+    color: inherit !important;
+  }
+}
+@media (min-width: 1200px) {
+  .text-xl-primary {
+    color: #0d6efd !important;
+  }
+  .text-xl-secondary {
+    color: #6c757d !important;
+  }
+  .text-xl-success {
+    color: #198754 !important;
+  }
+  .text-xl-info {
+    color: #0dcaf0 !important;
+  }
+  .text-xl-warning {
+    color: #B59A6A !important;
+  }
+  .text-xl-danger {
+    color: #dc3545 !important;
+  }
+  .text-xl-light {
+    color: #F4F4ED !important;
+  }
+  .text-xl-dark {
+    color: #212529 !important;
+  }
+  .text-xl-white {
+    color: #fff !important;
+  }
+  .text-xl-white {
+    color: #fff !important;
+  }
+  .text-xl-black {
+    color: #000 !important;
+  }
+  .text-xl-body {
+    color: var(--bs-body-color) !important;
+  }
+  .text-xl-muted {
+    color: var(--bs-secondary-color) !important;
+  }
+  .text-xl-reset {
+    color: inherit !important;
+  }
+}
+@media (min-width: 1400px) {
+  .text-xxl-primary {
+    color: #0d6efd !important;
+  }
+  .text-xxl-secondary {
+    color: #6c757d !important;
+  }
+  .text-xxl-success {
+    color: #198754 !important;
+  }
+  .text-xxl-info {
+    color: #0dcaf0 !important;
+  }
+  .text-xxl-warning {
+    color: #B59A6A !important;
+  }
+  .text-xxl-danger {
+    color: #dc3545 !important;
+  }
+  .text-xxl-light {
+    color: #F4F4ED !important;
+  }
+  .text-xxl-dark {
+    color: #212529 !important;
+  }
+  .text-xxl-white {
+    color: #fff !important;
+  }
+  .text-xxl-white {
+    color: #fff !important;
+  }
+  .text-xxl-black {
+    color: #000 !important;
+  }
+  .text-xxl-body {
+    color: var(--bs-body-color) !important;
+  }
+  .text-xxl-muted {
+    color: var(--bs-secondary-color) !important;
+  }
+  .text-xxl-reset {
+    color: inherit !important;
+  }
+}
 @font-face {
   font-family: "DM Sans";
   src: url("./assets/styles/utils/fonts/DM_Sans/static/DMSans-Thin.ttf") format("truetype");
