@@ -168,7 +168,7 @@ function content()
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="row">
+                    <div class="row h-100">
                         <div class="col-lg-12 col-md-6">
                             <div class="h-100 border-lg-left p-0 p-lg-4">
                                 <?php get_template_part('components/newsletter'); ?>
