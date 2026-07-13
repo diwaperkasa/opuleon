@@ -16,6 +16,11 @@ window.addEventListener("scroll", () => {
     // }
 });
 
+document.documentElement.style.setProperty(
+    '--navbar-height',
+    `${Math.floor(header.offsetHeight)}px`
+);
+
 window.addEventListener('resize', () => {
     document.documentElement.style.setProperty(
         '--navbar-height',
