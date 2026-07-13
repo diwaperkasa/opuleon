@@ -46,7 +46,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-4">
-                        <div class="my-5">
+                        <div class="my-3 my-md-5">
                             <form action="/" method="get">
                                 <div class="input-group">
                                     <span class="input-group-text rounded-0">
