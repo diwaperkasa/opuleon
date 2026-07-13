@@ -34,7 +34,7 @@
         </nav>
     </div>
     <div class="position-relative">
-        <div class="search-container bg-white position-absolute w-100 bg-white">
+        <div class="search-container bg-white position-absolute w-100 bg-white border-bottom">
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="my-5">
