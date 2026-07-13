@@ -1,5 +1,5 @@
 <div class="main-navbar">
-    <nav class="navbar navbar-expand-lg align-items-center">
+    <nav class="navbar navbar-expand-lg align-items-center m-0">
         <div class="container">
             <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-5">
                 <li class="nav-item">
@@ -18,7 +18,7 @@
                 </li>
             </ul>
             <a class="navbar-brand playfair-display fw-bold text-warning fs-1 tracking-wide m-0" href="/">Opuleon</a>
-            <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide" href="/subscribe">Subscribe</a>
+            <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide fs-small" href="/subscribe">Subscribe</a>
         </div>
     </nav>
     <nav class="overflow-auto pb-2">
