@@ -81,7 +81,7 @@ function content()
                 <?php endforeach; wp_reset_postdata(); ?>
             </div>
     </section>
-    <section id="latest-articles" class="mb-3">
+    <section id="latest-articles" class="mb-4">
         <div class="sticky-top top-8-40 bg-white pb-1 mb-3">
             <div class="container">
                 <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
