@@ -139,8 +139,8 @@ function content()
                                 </div>
                             <?php else: ?>
                                 <div class="col-lg-4 col-md-6">
-                                    <div class="border-lg-left border-top border-md-top-0">
-                                        <div class="p-lg-4">
+                                    <div class="p-lg-4">
+                                        <div class="border-lg-left border-top border-md-top-0">
                                             <?php get_template_part('components/post-card', 'list'); ?>
                                         </div>
                                     </div>
