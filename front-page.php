@@ -21,10 +21,11 @@ function content()
     $secondary_posts = array_slice($posts, 1, 3);
     $remaining_posts = array_slice($posts, 4, 6);
 ?>
-    <div class="container">
-        <section id="hero-section" class="mb-3">
-            <div class="border-bottom">
-                <?php foreach ($featured_post as $featured): $post = $featured; setup_postdata($post); ?>
+    <section id="hero-section" class="mb-3">
+        <div class="border-bottom">
+            <div class="container">
+                <?php foreach ($featured_post as $featured): $post = $featured;
+                    setup_postdata($post); ?>
                     <div class="hero-image">
                         <div class="hover-image">
                             <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
@@ -79,35 +80,45 @@ function content()
                             <span class="dm-sans"><?= get_reading_time(get_the_ID()) ?> min read</span>
                         </div>
                     </div>
-                <?php endforeach; wp_reset_postdata(); ?>
+                <?php endforeach;
+                wp_reset_postdata(); ?>
             </div>
-        </section>
-        <section id="latest-articles" class="mb-3">
+    </section>
+    <section id="latest-articles" class="mb-3">
+        <div class="container">
             <div class="sticky-top top-8-40 bg-white pb-1 mb-3">
                 <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
             </div>
-            <div class="border-bottom">
+        </div>
+        <div class="border-bottom">
+            <div class="container">
                 <div class="row">
-                    <?php foreach ($secondary_posts as $secondary): $post = $secondary; setup_postdata($post); ?>
+                    <?php foreach ($secondary_posts as $secondary): $post = $secondary;
+                        setup_postdata($post); ?>
                         <div class="col-lg-4 col-md-6">
                             <?php get_template_part('components/post-card'); ?>
                         </div>
-                    <?php endforeach; wp_reset_postdata(); ?>
+                    <?php endforeach;
+                    wp_reset_postdata(); ?>
                 </div>
             </div>
-        </section>
-        <section id="archives" class="mb-3">
+        </div>
+    </section>
+    <section id="archives" class="mb-3">
+        <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="border-bottom mb-3 sticky-top top-8-40 bg-white">
                         <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                     </div>
                     <div class="row post-archive-container">
-                        <?php foreach ($remaining_posts as $remaining): $post = $remaining; setup_postdata($post); ?>
+                        <?php foreach ($remaining_posts as $remaining): $post = $remaining;
+                            setup_postdata($post); ?>
                             <div class="col-6">
                                 <?php get_template_part('components/post-card'); ?>
                             </div>
-                        <?php endforeach; wp_reset_postdata(); ?>
+                        <?php endforeach;
+                        wp_reset_postdata(); ?>
                     </div>
                     <div class="text-center mb-3">
                         <button class="btn btn-outline-dark bg-light border-warning-hover load-more-btn px-5 text-uppercase text-warning-hover" data-limit="10" data-page="2" data-class="col-6">
@@ -124,8 +135,8 @@ function content()
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 <?php
 }
 
