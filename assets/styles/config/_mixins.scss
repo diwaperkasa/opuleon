@@ -54,3 +54,26 @@ $theme-colors: map-merge(
   9: 9rem,
   10: 10rem,
 ));
+
+$breakpoints: sm, md, lg, xl, xxl;
+
+$borders: (
+  top: border-top,
+  right: border-right,
+  bottom: border-bottom,
+  left: border-left,
+);
+
+@each $bp in $breakpoints {
+  @include media-breakpoint-up($bp) {
+    @each $name, $property in $borders {
+      .border-#{$bp}-#{$name} {
+        #{$property}: var(--bs-border-width) solid var(--bs-border-color) !important;
+      }
+
+      .border-#{$bp}-#{$name}-0 {
+        #{$property}: 0 !important;
+      }
+    }
+  }
+}
