@@ -63,15 +63,24 @@
     </div>
 </div>
 <!-- offcanvas -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
+<div class="offcanvas offcanvas-start w-100" tabindex="-1" id="offcanvasMenu">
     <div class="offcanvas-header">
-        <a href="/" class="text-decoration-none">
-            <h5 class="offcanvas-title text-uppercase playfair-display text-warning fw-bold">Opuleon</h5>
-        </a>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <button type="button" class="btn btn-light text-reset rounded-pill" data-bs-dismiss="offcanvas" aria-label="Close" style="--bs-btn-bg: #FFF; --bs-btn-border-color: #FFF; --bs-btn-hover-bg: rgb(245,245, 245); --bs-btn-hover-border-color: rgb(245,245, 245);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                    </svg>
+                    <span class="fs-small text-uppercase">Close</span>
+                </button>
+                <a href="/" class="text-decoration-none">
+                    <h5 class="offcanvas-title text-uppercase playfair-display text-warning fw-bold">Opuleon</h5>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="offcanvas-body h-100">
-        <nav class="nav w-100 py-5 align-items-center">
+    <div class="offcanvas-body">
+        <nav class="nav w-100 py-5 align-items-center h-100">
             <ul class="list-unstyled w-100 text-center mb-0">
                 <?php $menus = get_wp_menu_tree('offcanvas') ?>
                 <?php foreach ($menus as $menu): ?>
