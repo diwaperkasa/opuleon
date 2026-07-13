@@ -92,3 +92,12 @@ if (loadMoreBtn) {
         }
     });
 }
+
+const searchBtn = document.querySelectorAll('.search-btn');
+
+searchBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const searchContainer = document.querySelector('.search-container');
+        searchContainer.classList.toggle('show');
+    })
+})

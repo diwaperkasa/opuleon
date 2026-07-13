@@ -1,16 +1,16 @@
 <div class="main-navbar">
     <nav class="navbar navbar-expand-lg align-items-center p-0 m-0 border-bottom">
         <div class="container">
-            <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-4">
+            <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-md-4">
                 <li class="nav-item">
-                    <button class="fw-normal btn text-dark ps-0 pe-2 search-btn">
+                    <button class="btn btn-light search-btn ms-n2 nav-btn nav-btn p-0 m-0 rounded-circle" style="--bs-btn-bg: #FFF; --bs-btn-border-color: #FFF; --bs-btn-hover-bg: rgb(245,245, 245); --bs-btn-hover-border-color: rgb(245,245, 245);">
                         <svg class="m-0 p-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                         </svg>
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button class="fw-normal btn text-dark px-2" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
+                    <button class="btn btn-light nav-btn p-0 m-0 rounded-circle" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu" style="--bs-btn-bg: #FFF; --bs-btn-border-color: #FFF; --bs-btn-hover-bg: rgb(245,245, 245); --bs-btn-hover-border-color: rgb(245,245, 245);">
                         <svg class="m-0 p-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                         </svg>
@@ -33,6 +33,24 @@
             </ul>
         </nav>
     </div>
+    <div class="position-relative">
+        <div class="search-container bg-white position-absolute w-100 bg-white">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="my-5">
+                        <form action="/" method="get">
+                            <div class="input-group">
+                                <span class="input-group-text rounded-0">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" class="DocSearch-Search-Icon"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                </span>
+                                <input placeholder="Search" type="search" name="s" type="text" class="form-control rounded-0" required />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- offcanvas -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
@@ -42,12 +60,7 @@
         </a>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-        <div class="py-5">
-            <form action="/" method="get">
-                <input type="search" class="form-control rounded-0 border-0 border-bottom playfair-display px-5" name="s" placeholder="Search" required />
-            </form>
-        </div>
+    <div class="offcanvas-body h-100">
         <nav class="nav w-100 py-5 align-items-center">
             <ul class="list-unstyled w-100 text-center mb-0">
                 <?php $menus = get_wp_menu_tree('offcanvas') ?>
