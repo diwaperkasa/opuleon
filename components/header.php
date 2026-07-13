@@ -17,7 +17,7 @@
                     </button>
                 </li>
                 <li class="nav-item cancel-box d-none">
-                    <button class="btn btn-light search-btn cancel-btn p-0 px-3 m-0 rounded-pill" style="--bs-btn-bg: #FFF; --bs-btn-border-color: #FFF; --bs-btn-hover-bg: rgb(245,245, 245); --bs-btn-hover-border-color: rgb(245,245, 245);">
+                    <button class="btn btn-light search-btn ms-n2 cancel-btn p-0 px-3 m-0 rounded-pill" style="--bs-btn-bg: #FFF; --bs-btn-border-color: #FFF; --bs-btn-hover-bg: rgb(245,245, 245); --bs-btn-hover-border-color: rgb(245,245, 245);">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                             <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
                         </svg>
