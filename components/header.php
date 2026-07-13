@@ -23,7 +23,7 @@
     </nav>
     <div class="container">
         <nav class="overflow-auto pb-2">
-            <ul class="nav nav-pills flex-nowrap justify-content-center">
+            <ul class="nav justify-content-between justify-content-md-center align-items-center flex-nowrap">
                 <?php $menus = get_wp_menu_tree('primary') ?>
                 <?php foreach ($menus as $menu): ?>
                     <li class="nav-item">
