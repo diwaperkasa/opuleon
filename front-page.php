@@ -83,7 +83,7 @@ function content()
             </div>
         </section>
         <section id="latest-articles" class="mb-3">
-            <div class="sticky-top top-8-25 bg-white pb-1 mb-3">
+            <div class="sticky-top top-8-40 bg-white pb-1 mb-3">
                 <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
             </div>
             <div class="border-bottom">
@@ -99,7 +99,7 @@ function content()
         <section id="archives" class="mb-3">
             <div class="row">
                 <div class="col">
-                    <div class="border-bottom mb-3">
+                    <div class="border-bottom mb-3 sticky-top top-8-40 bg-white">
                         <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                     </div>
                     <div class="row post-archive-container">
