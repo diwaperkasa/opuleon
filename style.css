@@ -12937,6 +12937,14 @@ textarea.form-control-lg {
   transform: translateX(-100%);
 }
 
+.flickity-page-dots {
+  bottom: -1rem;
+}
+
+.flickity-enabled {
+  margin-bottom: 2rem;
+}
+
 .pagination {
   justify-content: center;
 }

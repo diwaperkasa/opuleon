@@ -166,13 +166,20 @@
     transition: all .3s ease-in-out;
 }
 
-
 .flickity-prev-next-button.next {
     transform: translateX(100%);
 }
 
 .flickity-prev-next-button.previous {
     transform: translateX(-100%);
+}
+
+.flickity-page-dots {
+    bottom: -1rem;
+}
+
+.flickity-enabled {
+    margin-bottom: 2rem;
 }
 
 .pagination {
