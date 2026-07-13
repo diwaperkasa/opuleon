@@ -27,7 +27,7 @@
                 <?php $menus = get_wp_menu_tree('primary') ?>
                 <?php foreach ($menus as $menu): ?>
                     <li class="nav-item">
-                        <a class="nav-link link-hover rounded-0 text-dark text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="<?= $menu['url'] ?>"><?= $menu['title'] ?></a>
+                        <a class="nav-link position-relative link-hover rounded-0 text-dark text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="<?= $menu['url'] ?>"><?= $menu['title'] ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
