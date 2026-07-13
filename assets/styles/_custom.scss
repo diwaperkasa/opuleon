@@ -216,6 +216,6 @@
     transition: 0.5s;
 }
 
-.link-hover:hover::before, .link-active {
+.link-hover:hover::before, .link-active::before {
     transform: scale(1);
 }
