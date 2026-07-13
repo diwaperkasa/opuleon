@@ -22,7 +22,7 @@ function content()
     $remaining_posts = array_slice($posts, 4, 6);
 ?>
     <div class="container">
-        <section id="hero-section" class="my-3">
+        <section id="hero-section" class="mb-3">
             <div class="border-bottom">
                 <?php foreach ($featured_post as $featured): $post = $featured; setup_postdata($post); ?>
                     <div class="hero-image">

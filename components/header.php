@@ -1,4 +1,4 @@
-<div class="main-navbar">
+<div class="main-navbar mb-2">
     <nav class="navbar navbar-expand-lg align-items-center">
         <div class="container">
             <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-5">
