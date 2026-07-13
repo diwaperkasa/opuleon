@@ -203,3 +203,19 @@
     top: 0;
     z-index: 1020;
 }
+
+.link-hover::before {
+    position: absolute;
+    content: "";
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    height: 2px;
+    transform: scale(0);
+    background: $warning;
+    transition: 0.5s;
+}
+
+.link-hover:hover::before, .link-active {
+    transform: scale(1);
+}

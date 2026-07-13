@@ -12342,6 +12342,26 @@ textarea.form-control-lg {
   top: 5rem !important;
 }
 
+.top-6 {
+  top: 6rem !important;
+}
+
+.top-7 {
+  top: 7rem !important;
+}
+
+.top-8 {
+  top: 8rem !important;
+}
+
+.top-9 {
+  top: 9rem !important;
+}
+
+.top-10 {
+  top: 10rem !important;
+}
+
 @font-face {
   font-family: "DM Sans";
   src: url("./assets/styles/utils/fonts/DM_Sans/static/DMSans-Thin.ttf") format("truetype");
@@ -12941,4 +12961,20 @@ textarea.form-control-lg {
   position: sticky;
   top: 0;
   z-index: 1020;
+}
+
+.link-hover::before {
+  position: absolute;
+  content: "";
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  height: 2px;
+  transform: scale(0);
+  background: #B59A6A;
+  transition: 0.5s;
+}
+
+.link-hover:hover::before, .link-active {
+  transform: scale(1);
 }
