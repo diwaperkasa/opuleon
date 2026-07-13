@@ -138,21 +138,8 @@
     }
 
     .gallery {
-        .portrait {
-            img {
-                max-width: unset;
-                width: auto;
-                max-height: 500px;
-                height: unset;
-            }
-        }
-
         figure {
             width: 100%;
-        }
-
-        figure:has(.portrait) {
-            text-align: center;
         }
     }
 
@@ -207,4 +194,12 @@
         --bs-text-opacity: 1;
         color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
     }
+}
+
+.site-header {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
 }

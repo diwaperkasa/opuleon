@@ -1,29 +1,38 @@
-<div class="container main-navbar">
-    <div class="border-bottom mb-2">
-        <nav class="navbar navbar-expand-lg align-items-center">
-            <a class="navbar-brand text-uppercase playfair-display fw-bold text-warning fs-4 tracking-wide" href="/">OPULEON</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 align-items-center">
-                    <?php $menus = get_wp_menu_tree('primary') ?>
-                    <?php foreach ($menus as $menu): ?>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="<?= $menu['url'] ?>"><?= $menu['title'] ?></a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-            <a class="text-decoration-none navbar-item fw-normal d-none d-lg-block text-uppercase dm-sans text-warning me-1 tracking-wide" href="/studio">Studio
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
-                </svg>
-            </a>
-            <button class="navbar-brand fw-normal d-block d-lg-none btn text-warning m-0 p-0" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
-                <svg class="m-0 p-0" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 14 14">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                </svg>
-            </button>
-        </nav>
-    </div>
+<div class="main-navbar">
+    <nav class="navbar navbar-expand-lg align-items-center">
+        <div class="container">
+            <ul class="d-flex list-unstyled navbar-brand m-0 p-0 align-items-center pe-5">
+                <li class="nav-item">
+                    <button class="fw-normal btn text-dark ps-0 pe-2 search-btn">
+                        <svg class="m-0 p-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="fw-normal btn text-dark px-2" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
+                        <svg class="m-0 p-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+            <a class="navbar-brand playfair-display fw-bold text-warning fs-1 tracking-wide m-0" href="/">Opuleon</a>
+            <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide" href="/studio">Subscribe</a>
+        </div>
+    </nav>
+    <nav class="overflow-auto">
+        <div class="container">
+            <ul class="nav nav-pills flex-nowrap justify-content-center">
+                <?php $menus = get_wp_menu_tree('primary') ?>
+                <?php foreach ($menus as $menu): ?>
+                    <li class="nav-item">
+                        <a class="nav-link rounded-0 text-dark text-uppercase dm-sans mx-3 tracking-wide text-warning-hover" href="<?= $menu['url'] ?>"><?= $menu['title'] ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </nav>
 </div>
 <!-- offcanvas -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">

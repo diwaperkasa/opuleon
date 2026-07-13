@@ -22,13 +22,7 @@ function content()
     $remaining_posts = array_slice($posts, 4, 6);
 ?>
     <div class="container">
-        <section id="hero-section" class="mb-3">
-            <div class="d-flex gap-3 align-items-center mb-1">
-                <?php $menus = get_wp_menu_tree('secondary') ?>
-                <?php foreach ($menus as $menu): ?>
-                    <a href="<?= $menu['url'] ?>" class="fs-6 text-decoration-none text-uppercase text-secondary text-uppercase dm-sans text-warning me-3 tracking-wide border-warning"><?= $menu['title'] ?></a>
-                <?php endforeach ?>
-            </div>
+        <section id="hero-section" class="my-3">
             <div class="border-bottom">
                 <?php foreach ($featured_post as $featured): $post = $featured; setup_postdata($post); ?>
                     <div class="hero-image">
