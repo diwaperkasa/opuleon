@@ -12471,7 +12471,7 @@ textarea.form-control-lg {
   font-style: italic;
 }
 .dm-sans {
-  font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans", sans-serif !important;
 }
 
 .dm-sans-thin {
@@ -12591,7 +12591,7 @@ textarea.form-control-lg {
   font-style: italic;
 }
 .libre-baskerville {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Libre Baskerville", serif !important;
 }
 
 .libre-baskerville-regular {
@@ -12710,7 +12710,7 @@ textarea.form-control-lg {
   font-style: italic;
 }
 .playfair-display {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif !important;
 }
 
 .playfair-display-regular {

@@ -117,7 +117,7 @@ function content()
                     <div class="container">
                         <div class="d-flex justify-content-between pb-1">
                             <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide m-0 p-0">More from <?= $category->name ?></h2>
-                            <a href="<?= get_term_link($category) ?>" class="text-decoration-none text-warning text-uppercase">
+                            <a href="<?= get_term_link($category) ?>" class="text-decoration-none text-warning text-uppercase tracking-wide">
                                 View All
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 18 18">
                                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
