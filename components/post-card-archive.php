@@ -21,7 +21,7 @@
             </div>
         <?php endif; ?>
         <a href="<?= get_the_permalink() ?>" class="text-decoration-none text-dark text-warning-hover">
-            <h3 class="card-title playfair-display fw-bold"><?php the_title() ?>
+            <h3 class="h4 card-title playfair-display fw-bold"><?php the_title() ?>
                 <?php if ($italic_title = get_post_meta(get_the_ID(), '_italic_title', true)) : ?>
                     <span class="fw-normal fst-italic"><?= esc_html($italic_title) ?></span>
                 <?php endif; ?>
