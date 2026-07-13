@@ -21,8 +21,8 @@
             <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide fs-small" href="/subscribe">Subscribe</a>
         </div>
     </nav>
-    <nav class="overflow-auto pb-2">
-        <div class="container">
+    <div class="container">
+        <nav class="overflow-auto pb-2">
             <ul class="nav nav-pills flex-nowrap justify-content-center">
                 <?php $menus = get_wp_menu_tree('primary') ?>
                 <?php foreach ($menus as $menu): ?>
@@ -31,8 +31,8 @@
                     </li>
                 <?php endforeach; ?>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </div>
 <!-- offcanvas -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
