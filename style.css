@@ -12986,3 +12986,7 @@ textarea.form-control-lg {
 .link-hover:hover::before, .link-active::before {
   transform: scale(1);
 }
+
+.top-8-25 {
+  top: 8.25rem;
+}

@@ -83,7 +83,7 @@ function content()
             </div>
         </section>
         <section id="latest-articles" class="mb-3">
-            <div class="sticky-top top-8 bg-white mb-4">
+            <div class="sticky-top top-8-25 bg-white pb-1 mb-3">
                 <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
             </div>
             <div class="border-bottom">
