@@ -18,7 +18,7 @@
                 </li>
             </ul>
             <a class="navbar-brand playfair-display fw-bold text-warning fs-1 tracking-wide m-0" href="/">Opuleon</a>
-            <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide" href="/studio">Subscribe</a>
+            <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide" href="/subscribe">Subscribe</a>
         </div>
     </nav>
     <nav class="overflow-auto pb-2">
