@@ -7,12 +7,11 @@ add_action('genesis_loop', 'content');
 function content()
 {
     global $post;
-    $limit = 10;
 
     $query = new WP_Query([
         'post_type'      => 'post',
         'post_status'    => 'publish',
-        'posts_per_page' => $limit,
+        'posts_per_page' => carbon_get_post_meta(get_the_ID(), 'number_of_posts') ?: 10,
         'paged'          => (int) get_query_var('paged', 1),
     ]);
 
@@ -24,8 +23,7 @@ function content()
     <section id="hero-section" class="mb-3">
         <div class="border-bottom">
             <div class="container">
-                <?php foreach ($featured_post as $featured): $post = $featured;
-                    setup_postdata($post); ?>
+                <?php foreach ($featured_post as $featured): $post = $featured; setup_postdata($post); ?>
                     <div class="hero-image">
                         <div class="hover-image">
                             <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
@@ -80,8 +78,7 @@ function content()
                             <span class="dm-sans"><?= get_reading_time(get_the_ID()) ?> min read</span>
                         </div>
                     </div>
-                <?php endforeach;
-                wp_reset_postdata(); ?>
+                <?php endforeach; wp_reset_postdata(); ?>
             </div>
     </section>
     <section id="latest-articles" class="mb-3">
@@ -93,17 +90,45 @@ function content()
         <div class="border-bottom">
             <div class="container">
                 <div class="row">
-                    <?php foreach ($secondary_posts as $secondary): $post = $secondary;
-                        setup_postdata($post); ?>
+                    <?php foreach ($secondary_posts as $secondary): $post = $secondary; setup_postdata($post); ?>
                         <div class="col-lg-4 col-md-6">
                             <?php get_template_part('components/post-card'); ?>
                         </div>
-                    <?php endforeach;
-                    wp_reset_postdata(); ?>
+                    <?php endforeach; wp_reset_postdata(); ?>
                 </div>
             </div>
         </div>
     </section>
+    <?php $categories = carbon_get_post_meta(get_the_ID(), 'categories') ?: []; ?>
+    <?php $category_length = carbon_get_post_meta(get_the_ID(), 'number_of_category_posts') ?: []; ?>
+    <?php foreach ($categories as $row): ?>
+        <section id="category-<?= $row['category_id'] ?>">
+            <?php
+            $category_posts_query = new WP_Query([
+                'post_type'         => 'post',
+                'post_status'       => 'publish',
+                'posts_per_page'    => $category_length,
+                'cat'               => $row['category_id']
+            ]);
+            $index = 0;
+            ?>
+            <div class="container">
+                <div class="row">
+                    <?php while ($category_posts_query->have_posts()): $category_posts_query->the_post(); ?>
+                        <?php if ($category_posts_query->current_post == 0): ?>
+                            <div class="col-12">
+                                <?php get_template_part('components/post-card', 'landscape'); ?>
+                            </div>
+                        <?php else: ?>
+                            <div class="col-lg-4 col-md-6">
+                                <?php get_template_part('components/post-card', 'list'); ?>
+                            </div>
+                        <?php endif ?>
+                    <?php endwhile; wp_reset_postdata(); ?>
+                </div>
+            </div>
+        </section>
+    <?php endforeach ?>
     <section id="archives" class="mb-3">
         <div class="container">
             <div class="row">
@@ -112,21 +137,11 @@ function content()
                         <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                     </div>
                     <div class="row post-archive-container">
-                        <?php foreach ($remaining_posts as $remaining): $post = $remaining;
-                            setup_postdata($post); ?>
+                        <?php foreach ($remaining_posts as $remaining): $post = $remaining; setup_postdata($post); ?>
                             <div class="col-6">
                                 <?php get_template_part('components/post-card'); ?>
                             </div>
-                        <?php endforeach;
-                        wp_reset_postdata(); ?>
-                    </div>
-                    <div class="text-center mb-3">
-                        <button class="btn btn-outline-dark bg-light border-warning-hover load-more-btn px-5 text-uppercase text-warning-hover" data-limit="10" data-page="2" data-class="col-6">
-                            Load More
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-repeat" viewBox="0 0 20 20">
-                                <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"></path>
-                            </svg>
-                        </button>
+                        <?php endforeach; wp_reset_postdata(); ?>
                     </div>
                 </div>
                 <div class="col-md-5">

@@ -50,7 +50,7 @@ function get_wp_menu_tree($menu_location = 'primary')
     }
 
     $menu_id = $locations[$menu_location];
-    $items   = wp_get_nav_menu_items($menu_id);
+    $items   = wp_get_nav_menu_items($menu_id) ?: [];
 
     $menu_tree = [];
     $children  = [];
