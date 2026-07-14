@@ -37,7 +37,7 @@
                 <?php $menus = get_wp_menu_tree('primary') ?>
                 <?php foreach ($menus as $menu): ?>
                     <li class="nav-item">
-                        <a class="nav-link position-relative link-hover rounded-0 text-dark text-uppercase dm-sans mx-3 tracking-wide text-warning-hover <?= current_url() ?> <?= $menu['url'] === get_permalink() ? "link-active" : "" ?>" href="<?= $menu['url'] ?>"><?= $menu['title'] ?></a>
+                        <a class="nav-link position-relative link-hover rounded-0 text-dark text-uppercase dm-sans mx-3 tracking-wide text-warning-hover <?= untrailingslashit( $menu['url'] ) === current_url() ? "link-active" : "" ?>" href="<?= $menu['url'] ?>"><?= $menu['title'] ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
