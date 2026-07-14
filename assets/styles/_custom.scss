@@ -260,7 +260,13 @@
     transition: all .2s ease-in-out;
 }
 
-.hover-image:hover .img-overlay {
-    --bs-bg-opacity: .5;
-    background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+.hover-image:hover {
+    img {
+        filter: grayscale(100%);
+    }
+
+    .img-overlay {
+        --bs-bg-opacity: .5;
+        background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+    }
 }
