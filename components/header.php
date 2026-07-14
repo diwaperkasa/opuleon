@@ -50,11 +50,11 @@
                     <div class="col-md-4">
                         <div class="my-3 my-md-5">
                             <form action="/" method="get">
-                                <div class="input-group">
-                                    <span class="input-group-text rounded-0">
+                                <div class="position-relative">
+                                    <span class="d-flex position-absolute top-50 start-0 translate-middle-y ms-3">
                                         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" class="DocSearch-Search-Icon"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                                     </span>
-                                    <input placeholder="Search" type="search" name="s" type="text" class="form-control rounded-0" required />
+                                    <input placeholder="Search" type="search" name="s" type="text" class="form-control rounded-0 ps-5" required />
                                 </div>
                             </form>
                         </div>
