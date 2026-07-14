@@ -32,7 +32,7 @@
         </div>
     </nav>
     <div class="container">
-        <nav class="overflow-auto pb-2">
+        <nav class="overflow-auto">
             <ul class="nav justify-content-between justify-content-md-center align-items-center flex-nowrap">
                 <?php $menus = get_wp_menu_tree('primary') ?>
                 <?php foreach ($menus as $menu): ?>
