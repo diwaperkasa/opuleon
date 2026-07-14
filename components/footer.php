@@ -3,7 +3,7 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center py-3">
                 <a href="/" class="text-decoration-none">
-                    <p class="mb-0 text-warning text-uppercase playfair-display fw-bold">Opuleon</p>
+                    <img height="20px" src="<?= get_stylesheet_directory_uri() . "/assets/icons/Opuleon Gold Logo.png" ?>" />
                 </a>
                 <ul class="list-unstyled d-flex gap-3 mb-0">
                     <?php $menus = get_wp_menu_tree('footer') ?>
