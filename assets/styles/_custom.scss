@@ -145,6 +145,7 @@
 
     .gallery:hover {
         .flickity-prev-next-button {
+            display: block;
             opacity: 1;
             visibility: visible;
         }
@@ -160,6 +161,7 @@
 }
 
 .flickity-prev-next-button {
+    display: none;
     box-shadow: var(--bs-box-shadow) !important;
     visibility: hidden;
     opacity: 0;
