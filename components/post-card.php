@@ -6,6 +6,7 @@
                 'large',
                 ['class' => 'img-fluid rounded']
             ); ?>
+            <div class="img-overlay"></div>
         </a>
     </div>
     <div class="card-body px-0">
