@@ -210,3 +210,9 @@ function more_post()
 
 add_action('wp_ajax_more_post', 'more_post');
 add_action('wp_ajax_nopriv_more_post', 'more_post');
+
+function current_url()
+{
+    global $wp;
+    return untrailingslashit( home_url($wp->request) );
+}
