@@ -14161,7 +14161,6 @@ textarea.form-control-lg {
   width: 100%;
 }
 .post__content .gallery:hover .flickity-prev-next-button {
-  display: block;
   opacity: 1;
   visibility: visible;
 }
@@ -14174,7 +14173,6 @@ textarea.form-control-lg {
 }
 
 .flickity-prev-next-button {
-  display: none;
   box-shadow: var(--bs-box-shadow) !important;
   visibility: hidden;
   opacity: 0;
@@ -14182,11 +14180,11 @@ textarea.form-control-lg {
 }
 
 .flickity-prev-next-button.next {
-  transform: translateX(100%);
+  transform: translateY(100%);
 }
 
 .flickity-prev-next-button.previous {
-  transform: translateX(-100%);
+  transform: translateY(100%);
 }
 
 .flickity-page-dots {
