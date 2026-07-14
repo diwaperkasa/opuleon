@@ -160,7 +160,7 @@ function content()
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="border-bottom mb-3 sticky-top top-section bg-white">
+                    <div class="border-bottom mb-4 sticky-top top-section bg-white">
                         <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                     </div>
                     <div class="row post-archive-container">
