@@ -14260,3 +14260,12 @@ textarea.form-control-lg {
 .cancel-btn {
   height: 40px;
 }
+
+.img-overlay {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-image:hover .img-overlay {
+  --bs-bg-opacity: .5;
+  background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+}

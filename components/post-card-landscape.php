@@ -1,7 +1,7 @@
 <div class="card mb-0 mb-md-3 border-0">
     <div class="row">
         <div class="col-md-6">
-            <div class="hover-image">
+            <div class="hover-image position-relative">
                 <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
                     <?= get_the_post_thumbnail(
                         get_the_ID(),
@@ -9,6 +9,7 @@
                         ['class' => 'img-fluid rounded']
                     ); ?>
                 </a>
+                <div class="img-overlay rounded position-absolute top-0 w-100 h-100"></div>
             </div>
         </div>
         <div class="col-md-6">
