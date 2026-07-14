@@ -26,7 +26,7 @@ function content()
                 <?php foreach ($featured_post as $featured): $post = $featured; setup_postdata($post); ?>
                     <div class="bg-dark bg-md-white">
                         <div class="hero-image">
-                            <div class="hover-image">
+                            <div class="img-container">
                                 <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
                                     <?= get_the_post_thumbnail(
                                         get_the_ID(),
