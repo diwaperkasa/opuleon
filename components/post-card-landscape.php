@@ -1,4 +1,4 @@
-<div class="card mb-0 mb-md-3 border-0">
+<div class="card mb-0 mb-md-4 border-0">
     <div class="row">
         <div class="col-md-6">
             <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
