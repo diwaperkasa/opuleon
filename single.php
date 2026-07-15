@@ -6,9 +6,9 @@ add_action('genesis_loop', 'content');
 
 function content()
 { ?>
-    <div class="container">
-        <?php while (have_posts()) : the_post(); ?>
-            <article <?php post_class("py-4"); ?>>
+    <?php while (have_posts()) : the_post(); ?>
+         <article <?php post_class("py-4"); ?>>
+            <div class="container">
                 <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
                 <?php if ($categories): ?>
                     <div class="d-flex flex-row-reverse justify-content-end flex-wrap py-2 category-container">
@@ -44,6 +44,8 @@ function content()
                         <span class="dm-sans"><?= get_reading_time(get_the_ID()) ?> min read</span>
                     </div>
                 </header>
+            </div>
+            <div class="container">
                 <div class="featured__image mb-5">
                     <?= get_the_post_thumbnail(
                         get_the_ID(),
@@ -57,6 +59,8 @@ function content()
                         </p>
                     <?php endif; ?>
                 </div>
+            </div>
+            <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="post__content libre-baskerville mb-5">
@@ -118,9 +122,9 @@ function content()
                         <?php endwhile; wp_reset_postdata(); ?>
                     </div>
                 </footer>
-            </article>
-        <?php endwhile; ?>
-    </div>
+            </div>
+        </article>
+    <?php endwhile; ?>
 <?php }
 
 genesis();
