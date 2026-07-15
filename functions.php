@@ -169,7 +169,7 @@ function more_post()
 
     $page = filter_input(INPUT_GET, 'page', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $length = filter_input(INPUT_GET, 'length', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $termId = filter_input(INPUT_GET, 'term', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $termId = filter_input(INPUT_GET, 'term_id', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     $args = [
         'paged' => $page,
