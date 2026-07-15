@@ -22,7 +22,7 @@ function content()
 ?>
     <section id="hero-section" class="mb-3">
         <div class="border-bottom-0 border-md-bottom">
-            <div class="container">
+            <div class="container hero-container">
                 <?php foreach ($featured_post as $featured): $post = $featured; setup_postdata($post); ?>
                     <div class="bg-dark bg-md-white">
                         <div class="hero-image">
