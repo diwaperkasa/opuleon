@@ -47,7 +47,7 @@ function content()
                                     <span class="dm-sans"><?= get_reading_time(get_the_ID()) ?> min read</span>
                                 </div>
                             </header>
-                            <div class="border-bottom pt-2 pb-4 mb-5">
+                            <div class="border-bottom pt-2 pb-3 mb-5">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="text-warning text-uppercase dm-sans tracking-wide">Share This Piece</span>
                                     <div class="social-buttons d-flex">
