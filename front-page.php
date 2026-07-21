@@ -85,8 +85,10 @@ function content()
     </section>
     <section id="latest-articles" class="mb-4">
         <div class="sticky-top top-section bg-white pb-1 mb-3 mt-n4 pt-3">
-            <div class="container">
-                <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
+            <div class="border-bottom">
+                <div class="container">
+                    <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
+                </div>
             </div>
         </div>
         <div class="border-bottom">
@@ -155,10 +157,14 @@ function content()
         </section>
     <?php endforeach ?>
     <section id="archives" class="mb-3">
-        <div class="container">
-            <div class="border-bottom mb-4 mt-n3 pt-3 sticky-top top-section bg-white">
-                <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
+        <div class="border-bottom">
+            <div class="container">
+                <div class="border-bottom mb-4 mt-n3 pt-3 sticky-top top-section bg-white">
+                    <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
+                </div>
             </div>
+        </div>
+        <div class="container">
             <div class="row post-archive-container">
                 <?php foreach ($remaining_posts as $remaining): $post = $remaining; setup_postdata($post); ?>
                     <div class="col-sm-6 col-md-4">
