@@ -14127,17 +14127,31 @@ textarea.form-control-lg {
 }
 
 .post__content blockquote {
-  display: flex;
+  quotes: "“" "”" "‘" "’";
   font-size: 1.5rem;
-  font-style: italic !important;
+  font-style: italic;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   border-left: 2px solid #B59A6A;
-  margin: 0 0 1rem;
 }
-.post__content blockquote * {
-  margin: 0;
+.post__content blockquote p {
+  font-family: "Playfair Display";
+}
+.post__content blockquote p::before {
+  content: open-quote;
+}
+.post__content blockquote p::after {
+  content: close-quote;
+}
+.post__content blockquote footer {
+  font-size: 0.75rem;
+  font-family: "DM Sans";
+  letter-spacing: 0.1em;
+  color: rgba(var(--bs-warning-rgb), 1) !important;
+}
+.post__content blockquote footer cite {
+  font-style: normal;
 }
 .post__content a {
   text-decoration: underline;

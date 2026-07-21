@@ -101,17 +101,35 @@
 
 .post__content {
     blockquote {
-        display: flex;
+        quotes: "“" "”" "‘" "’";
         font-size: 1.5rem;
-        font-style: italic !important;
+        font-style: italic;
         padding-top: .5rem;
         padding-bottom: .5rem;
         padding-left: 1rem;
         border-left: 2px solid $warning;
-        margin: 0 0 1rem;
 
-        * {
-            margin: 0;
+        p {
+            font-family: "Playfair Display";
+        }
+
+        p::before {
+            content: open-quote;
+        }
+
+        p::after {
+            content: close-quote;
+        }
+
+        footer {
+            font-size: .75rem;
+            font-family: 'DM Sans';
+            letter-spacing: 0.1em;
+            color: rgba(var(--bs-warning-rgb), 1) !important;
+            
+            cite {
+                font-style: normal
+            }
         }
     }
 
