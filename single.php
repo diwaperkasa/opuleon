@@ -90,8 +90,8 @@ function content()
                             </div>
                         </div>
                         <footer class="post__footer">
-                            <div class="border-bottom mb-3">
-                                <p class="text-warning text-uppercase dm-sans tracking-wide">Continue Reading</p>
+                            <div class="border-bottom mb-4">
+                                <p class="text-warning text-uppercase dm-sans tracking-wide mb-2">Continue Reading</p>
                             </div>
                             <?php
                                 $args = [
