@@ -123,6 +123,8 @@ function content()
                                 <h3 class="text-secondary text-uppercase dm-sans tracking-wide fs-6">Popular Reads</h3>
                             </div>
                             <?php
+                                global $post;
+                                
                                 $popularPostIds = wpp_get_ids([
                                     'post_type' => 'post',
                                     'limit' => 5,
