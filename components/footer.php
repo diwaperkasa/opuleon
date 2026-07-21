@@ -10,7 +10,7 @@
                     <?php foreach ($menus as $menu): ?>
                         <li><a href="<?= $menu['url'] ?>" class="text-decoration-none text-dark text-uppercase dm-sans tracking-wide text-warning-hover d-none d-sm-block"><?= $menu['title'] ?></a></li>
                     <?php endforeach; ?>
-                    <li class="d-none d-lg-block"><span class="text-dark text-uppercase dm-sans tracking-wide">&copy; 2026 Opuleon</span></li>
+                    <li><span class="text-dark text-uppercase dm-sans tracking-wide">&copy; 2026 Opuleon</span></li>
                 </ul>
             </div>
         </div>
