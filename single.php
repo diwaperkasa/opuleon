@@ -47,7 +47,7 @@ function content()
                                     <span class="dm-sans"><?= get_reading_time(get_the_ID()) ?> min read</span>
                                 </div>
                             </header>
-                            <div class="border-bottom py-2 mb-5">
+                            <div class="border-bottom pt-2 pb-4 mb-5">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="text-warning text-uppercase dm-sans tracking-wide">Share This Piece</span>
                                     <div class="social-buttons d-flex">
@@ -72,7 +72,7 @@ function content()
                                     <?php $tags = get_the_tags() ?: []; ?>
                                     <?php foreach ($tags as $tag): ?>
                                         <a href="<?= esc_url(get_tag_link($tag->term_id)) ?>" class="btn text-decoration none btn-outline-dark border-secondary bg-white text-secondary text-warning-hover border-warning-hover me-2">
-                                            <span><?= esc_html($tag->name) ?></span>
+                                            <span class="fs-small"><?= esc_html($tag->name) ?></span>
                                         </a>
                                     <?php endforeach; ?>
                                 </div>
