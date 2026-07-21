@@ -25,8 +25,8 @@
                     </button>
                 </li>
             </ul>
-            <a class="navbar-brand playfair-display fw-bold text-warning fs-1 tracking-wide m-0" href="/">
-                <img height="30px" src="<?= get_stylesheet_directory_uri() . "/assets/icons/Opuleon Gold Logo.png" ?>" />
+            <a class="navbar-brand" href="/">
+                <span class="fw-bold h2 playfair-display">Opuleon</span>
             </a>
             <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide fs-small" href="/subscribe">Subscribe</a>
         </div>
@@ -76,7 +76,7 @@
                     <span class="fs-small text-uppercase">Close</span>
                 </button>
                 <a href="/" class="text-decoration-none">
-                    <img height="30px" src="<?= get_stylesheet_directory_uri() . "/assets/icons/Opuleon Gold Logo.png" ?>" />
+                    <span class="text-dark fw-bold h2 playfair-display">Opuleon</span>
                 </a>
             </div>
         </div>

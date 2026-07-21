@@ -9,12 +9,8 @@ function content()
     $term = get_queried_object();
 ?>
     <div class="container">
-        <div class="d-flex flex-row-reverse justify-content-center flex-wrap py-2 category-container mb-3">
-            <?php $category = $term ?>
-            <h1 class="m-0 p-0 playfair-display fst-italic"><a href="<?= get_term_link($category); ?>" class="text-decoration-none text-warning text-uppercase fw-light tracking-wide"><?= $category->name ?></a></h1>
-        </div>
         <?php if ( have_posts() ) : ?>
-            <div class="row post-archive-container">
+            <div class="row post-archive-container mt-4">
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="col-lg-4">
                         <?php get_template_part('components/post-card'); ?>

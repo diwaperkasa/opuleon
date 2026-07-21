@@ -14286,3 +14286,23 @@ textarea.form-control-lg {
     --bs-gutter-x: 1.5rem;
   }
 }
+
+@media (min-width: 768px) {
+  .hero-caption-position {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.bg-hero-caption {
+  --bs-bg-opacity: 1;
+  background: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+}
+@media (min-width: 768px) {
+  .bg-hero-caption {
+    background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)) !important;
+  }
+}
