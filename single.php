@@ -68,10 +68,10 @@ function content()
                                         </button>
                                     </div>
                                 </div>
-                                <div class="d-flex">
+                                <div class="d-flex flex-wrap">
                                     <?php $tags = get_the_tags() ?: []; ?>
                                     <?php foreach ($tags as $tag): ?>
-                                        <a href="<?= esc_url(get_tag_link($tag->term_id)) ?>" class="btn text-decoration none btn-outline-dark border-secondary bg-white text-secondary text-warning-hover border-warning-hover me-2 text-nowrap">
+                                        <a href="<?= esc_url(get_tag_link($tag->term_id)) ?>" class="btn text-decoration none btn-outline-dark border-secondary bg-white text-secondary text-warning-hover border-warning-hover me-2 mb-2 text-nowrap">
                                             <span class="fs-small"><?= esc_html($tag->name) ?></span>
                                         </a>
                                     <?php endforeach; ?>
