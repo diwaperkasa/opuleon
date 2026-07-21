@@ -143,7 +143,7 @@ function content()
                                 <div class="col-lg-4 col-md-6">
                                     <div class="py-lg-4 h-100">
                                         <div class="px-lg-3 h-100 <?= $category_posts_query->current_post > 1 ? "border-lg-left" : "" ?> border-top border-md-top-0">
-                                            <?php get_template_part('components/post-card', 'list'); ?>
+                                            <?php get_template_part('components/post-card'); ?>
                                         </div>
                                     </div>
                                 </div>
