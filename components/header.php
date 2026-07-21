@@ -25,7 +25,7 @@
                     </button>
                 </li>
             </ul>
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand m-0 my-2" href="/">
                 <span class="fw-bold h2 playfair-display">Opuleon</span>
             </a>
             <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide fs-small" href="/subscribe">Subscribe</a>
