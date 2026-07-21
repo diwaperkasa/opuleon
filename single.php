@@ -49,7 +49,7 @@ function content()
                             </header>
                             <div class="border-bottom pt-2 pb-3 mb-5">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="text-warning text-uppercase dm-sans tracking-wide">Share This Piece</span>
+                                    <span class="text-secondary text-uppercase dm-sans tracking-wide">Share This Piece</span>
                                     <div class="social-buttons d-flex">
                                         <button class="btn" data-sharer="twitter" data-title="Share from Opuleon! <?= get_the_permalink() ?>">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
