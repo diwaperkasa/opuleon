@@ -100,7 +100,7 @@ function content()
                             </div>
                         </div>
                         <footer class="post__footer">
-                            <div class="border-bottom mb-4">
+                            <div class="border-bottom mb-4 mt-n3 pt-3 sticky-top top-section bg-white">
                                 <p class="text-secondary text-uppercase dm-sans tracking-wide mb-2">Continue Reading</p>
                             </div>
                             <?php
