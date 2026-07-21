@@ -14311,6 +14311,18 @@ textarea.form-control-lg {
   }
 }
 
+.post-featured-container {
+  --bs-gutter-x: 1.5rem;
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+@media (min-width: 768px) {
+  .post-featured-container {
+    margin-right: unset;
+    margin-left: unset;
+  }
+}
+
 .bg-hero-caption {
   --bs-bg-opacity: 1;
   background: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
