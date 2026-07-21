@@ -157,9 +157,9 @@ function content()
         </section>
     <?php endforeach ?>
     <section id="archives" class="mb-3">
-        <div class="border-bottom mb-4">
+        <div class="border-bottom mb-4 sticky-top top-section bg-white">
             <div class="container">
-                <div class="mt-n3 pt-3 sticky-top top-section bg-white">
+                <div class="mt-n3 pt-3">
                     <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                 </div>
             </div>
