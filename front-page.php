@@ -159,7 +159,7 @@ function content()
     <section id="archives" class="mb-3">
         <div class="border-bottom">
             <div class="container">
-                <div class="border-bottom mb-4 mt-n3 pt-3 sticky-top top-section bg-white">
+                <div class="mt-n3 pt-3 sticky-top top-section bg-white">
                     <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                 </div>
             </div>
