@@ -143,7 +143,7 @@ function content()
                             ?>
                             <ol class="ps-3">
                                 <?php foreach ($popularPostIds as $postId): $post = get_post($postId); setup_postdata($post) ?>
-                                    <li class="ps-2 text-warning fs-small">
+                                    <li class="ps-2 text-warning fs-small border-bottom">
                                         <?php get_template_part('components/post-card', 'list'); ?>
                                     </li>
                                 <?php endforeach ?>
