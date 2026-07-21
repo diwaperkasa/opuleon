@@ -97,7 +97,7 @@ function content()
                                 $args = [
                                     'post_type'         => 'post',
                                     'post_status'       => 'publish',
-                                    'posts_per_page'    => 3,
+                                    'posts_per_page'    => 4,
                                     'post__not_in'      => [get_the_ID()],
                                     'orderby'           => 'rand',
                                 ];
@@ -110,7 +110,7 @@ function content()
                             ?>
                             <div class="row">
                                 <?php while ($query->have_posts()) : $query->the_post(); ?>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <?php get_template_part('components/post-card'); ?>
                                     </div>
                                 <?php endwhile; wp_reset_postdata(); ?>
@@ -124,7 +124,7 @@ function content()
                             </div>
                             <?php
                                 global $post;
-                                
+
                                 $popularPostIds = wpp_get_ids([
                                     'post_type' => 'post',
                                     'limit' => 5,
