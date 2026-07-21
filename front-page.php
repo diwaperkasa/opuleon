@@ -35,7 +35,7 @@ function content()
                             </a>
                             <div class="hero-caption-position">
                                 <div class="row h-100">
-                                    <div class="col-md-6 h-100">
+                                    <div class="col-md-8 h-100">
                                         <div class="bg-hero-caption h-100 align-content-center">
                                             <div class="p-3 p-md-5">
                                                 <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
