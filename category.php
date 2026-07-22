@@ -7,14 +7,21 @@ add_action('genesis_loop', 'content');
 function content()
 {
     $term = get_queried_object();
+    global $wp_query;
 ?>
     <div class="container">
         <?php if ( have_posts() ) : ?>
             <div class="row post-archive-container mt-4">
                 <?php while ( have_posts() ) : the_post(); ?>
-                    <div class="col-lg-4">
-                        <?php get_template_part('components/post-card'); ?>
-                    </div>
+                    <?php if ($wp_query->current_post  == 0): ?>
+                        <div class="col-lg-12">
+                            <?php get_template_part('components/post-card', 'landscape'); ?>
+                        </div>
+                    <?php else: ?>
+                        <div class="col-lg-4">
+                            <?php get_template_part('components/post-card'); ?>
+                        </div>
+                    <?php endif; ?>
                 <?php endwhile; ?>
             </div>
             <div class="text-center mb-3">
@@ -26,7 +33,7 @@ function content()
                 </button>
             </div>
         <?php else : ?>
-            <p>No posts found matching your criteria.</p>
+            <p class="mt-4">No posts found matching your criteria.</p>
         <?php endif; ?>
     </div>
 <?php }
