@@ -20,12 +20,12 @@ function content()
     $secondary_posts = array_slice($posts, 1, 3);
     $remaining_posts = array_slice($posts, 4, 6);
 ?>
-    <section id="hero-section" class="mb-3">
+    <section id="hero-section" class="mb-4">
         <div class="border-bottom-0 border-md-bottom">
             <div class="container hero-container">
                 <?php foreach ($featured_post as $featured): $post = $featured; setup_postdata($post); ?>
                     <div class="hero-image">
-                        <div class="position-relative">
+                        <figure class="mb-0">
                             <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
                                 <?= get_the_post_thumbnail(
                                     get_the_ID(),
@@ -33,52 +33,48 @@ function content()
                                     ['class' => 'img-fluid']
                                 ); ?>
                             </a>
-                            <div class="hero-caption-position">
-                                <div class="row h-100 g-0">
-                                    <div class="col-md-8 h-100">
-                                        <div class="bg-hero-caption h-100 align-content-center">
-                                            <div class="p-3 p-md-5">
-                                                <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
-                                                <?php if ($categories): ?>
-                                                    <div class="d-flex flex-row-reverse justify-content-end flex-wrap category-container mb-3">
-                                                        <?php $category = $categories[0] ?>
-                                                        <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
-                                                        <?php while ($category->parent): ?>
-                                                            <?php $category = get_term($category->parent, 'category') ?>
-                                                            <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
-                                                        <?php endwhile ?>
-                                                    </div>
-                                                <?php endif; ?>
-                                                <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
-                                                    <h1 class="playfair-display fw-bold text-dark text-warning-hover text-white"><?php the_title() ?>
-                                                        <?php if ($italic_title = get_post_meta(get_the_ID(), '_italic_title', true)) : ?>
-                                                            <span class="fw-normal fst-italic"><?= esc_html($italic_title) ?></span>
-                                                        <?php endif; ?>
-                                                    </h1>
-                                                </a>
-                                                <?php if ($subtitle = get_the_subtitle(get_the_ID(), '', '', false)) : ?>
-                                                    <p class="playfair-display fst-italic text-light"><?= esc_html($subtitle) ?></p>
-                                                <?php endif; ?>
-                                                <div class="d-flex flex-wrap dot-between-item text-light">
-                                                    <?php $writers = get_the_terms(get_the_ID(), 'writer'); ?>
-                                                    <?php if ($writers): ?>
-                                                        <span class="fw-bold dm-sans">By
-                                                            <span class="writers comma-between-item">
-                                                                <?php foreach ($writers as $writer): ?>
-                                                                    <a href="<?= get_term_link($writer); ?>" class="text-decoration-none text-white text-secondary-hover"><?= $writer->name ?></a>
-                                                                <?php endforeach ?>
-                                                            </span>
-                                                        </span>
-                                                    <?php endif; ?>
-                                                    <span class="dm-sans text-light"><?= get_the_date('j F Y'); ?></span>
-                                                    <span class="dm-sans text-light"><?= get_reading_time(get_the_ID()) ?> min read</span>
-                                                </div>
+                            <figcaption>
+                                <div class="bg-dark">
+                                    <div class="p-3 p-md-5">
+                                        <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
+                                        <?php if ($categories): ?>
+                                            <div class="d-flex flex-row-reverse justify-content-end flex-wrap category-container mb-3">
+                                                <?php $category = $categories[0] ?>
+                                                <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
+                                                <?php while ($category->parent): ?>
+                                                    <?php $category = get_term($category->parent, 'category') ?>
+                                                    <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
+                                                <?php endwhile ?>
                                             </div>
+                                        <?php endif; ?>
+                                        <a href="<?= get_the_permalink() ?>" class="text-decoration-none">
+                                            <h1 class="playfair-display fw-bold text-dark text-warning-hover text-white"><?php the_title() ?>
+                                                <?php if ($italic_title = get_post_meta(get_the_ID(), '_italic_title', true)) : ?>
+                                                    <span class="fw-normal fst-italic"><?= esc_html($italic_title) ?></span>
+                                                <?php endif; ?>
+                                            </h1>
+                                        </a>
+                                        <?php if ($subtitle = get_the_subtitle(get_the_ID(), '', '', false)) : ?>
+                                            <p class="playfair-display fst-italic text-light"><?= esc_html($subtitle) ?></p>
+                                        <?php endif; ?>
+                                        <div class="d-flex flex-wrap dot-between-item text-light">
+                                            <?php $writers = get_the_terms(get_the_ID(), 'writer'); ?>
+                                            <?php if ($writers): ?>
+                                                <span class="fw-bold dm-sans">By
+                                                    <span class="writers comma-between-item">
+                                                        <?php foreach ($writers as $writer): ?>
+                                                            <a href="<?= get_term_link($writer); ?>" class="text-decoration-none text-white text-secondary-hover"><?= $writer->name ?></a>
+                                                        <?php endforeach ?>
+                                                    </span>
+                                                </span>
+                                            <?php endif; ?>
+                                            <span class="dm-sans text-light"><?= get_the_date('j F Y'); ?></span>
+                                            <span class="dm-sans text-light"><?= get_reading_time(get_the_ID()) ?> min read</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </figcaption>
+                        </figure>
                     </div>
                 <?php endforeach; wp_reset_postdata(); ?>
             </div>
