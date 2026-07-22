@@ -48,7 +48,7 @@ function content()
                                 </div>
                             </header>
                             <div class="border-bottom pt-2 pb-3 mb-5">
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
                                     <span class="text-secondary text-uppercase dm-sans tracking-wide">Share This Piece</span>
                                     <div class="social-buttons d-flex">
                                         <button class="btn" data-sharer="twitter" data-title="Share from Opuleon! <?= get_the_permalink() ?>">

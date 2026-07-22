@@ -64,6 +64,24 @@
     opacity: 1;
 }
 
+.subscribe-popup-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+    z-index: 1030;
+}
+
+.subscribe-popup-fixed.show {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .site-inner {
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Playfair Display'
