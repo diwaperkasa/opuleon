@@ -34,7 +34,7 @@ function content()
                                 ); ?>
                             </a>
                             <div class="hero-caption-position">
-                                <div class="row h-100">
+                                <div class="row h-100 g-0">
                                     <div class="col-md-8 h-100">
                                         <div class="bg-hero-caption h-100 align-content-center">
                                             <div class="p-3 p-md-5">
@@ -95,7 +95,7 @@ function content()
             <div class="container">
                 <div class="row">
                     <?php foreach ($secondary_posts as $index => $secondary): $post = $secondary; setup_postdata($post); ?>
-                        <div class="col-lg-4 col-md-6 <?= $index ? "border-lg-left border-lg-bottom-0" : "" ?>">
+                        <div class="col-lg-4 col-md-6">
                             <div class="p-lg-3">
                                 <?php get_template_part('components/post-card'); ?>
                             </div>
@@ -142,7 +142,7 @@ function content()
                                     </div>
                                 </div>
                             <?php else: ?>
-                                <div class="col-lg-4 col-md-6 <?= $category_posts_query->current_post > 1 ? "border-lg-left" : "" ?> border-top border-md-top-0">
+                                <div class="col-lg-4 col-md-6">
                                     <div class="py-4 h-100">
                                         <div class="h-100">
                                             <?php get_template_part('components/post-card'); ?>
