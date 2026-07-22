@@ -9,7 +9,7 @@ function content()
 ?>
     <div class="container">
         <?php if ( have_posts() ) : ?>
-            <div class="row">
+            <div class="row mt-4">
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="col-lg-4">
                         <?php get_template_part('components/post-card'); ?>
@@ -17,7 +17,7 @@ function content()
                 <?php endwhile; ?>
             </div>
         <?php else : ?>
-            <h1 class="playfair-display fw-bold">No posts found matching your criteria.</h1>
+            <h1 class="playfair-display fw-bold mt-4">No posts found matching your criteria.</h1>
         <?php endif; ?>
     </div>
 <?php }

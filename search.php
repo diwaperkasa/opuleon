@@ -26,7 +26,7 @@ function content()
                 ]); ?>
             </div>
         <?php else : ?>
-            <p>No posts found matching your criteria.</p>
+            <h1 class="playfair-display fw-bold mt-4">No posts found matching your criteria.</h1>
         <?php endif; ?>
     </div>
 <?php }
