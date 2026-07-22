@@ -95,7 +95,7 @@ function content()
             <div class="container">
                 <div class="row">
                     <?php foreach ($secondary_posts as $index => $secondary): $post = $secondary; setup_postdata($post); ?>
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-4 col-md-6 <?= $index ? "border-lg-left border-lg-bottom-0" : "" ?>">
                             <div class="p-lg-3">
                                 <?php get_template_part('components/post-card'); ?>
                             </div>
