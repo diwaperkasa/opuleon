@@ -5,27 +5,29 @@ import Flickity from 'flickity';
 const header = document.querySelector('.site-header');
 const subscribePopup = document.querySelector('.subscribe-popup-fixed');
 
-window.addEventListener("scroll", () => {
-    const current = window.scrollY;
-    const offsetHeight = header.offsetHeight;
-
-    if (current > offsetHeight) {
-        if (!subscribePopup.classList.contains('close')) {
-            subscribePopup.classList.add('show');
+if (subscribePopup) {
+    window.addEventListener("scroll", () => {
+        const current = window.scrollY;
+        const offsetHeight = header.offsetHeight;
+    
+        if (current > offsetHeight) {
+            if (!subscribePopup.classList.contains('close')) {
+                subscribePopup.classList.add('show');
+            }
+        } else {
+            subscribePopup.classList.remove('show');
         }
-    } else {
-        subscribePopup.classList.remove('show');
-    }
-});
+    });
 
-const subscribeCloseBtn = document.querySelectorAll('.subscribe-close');
-
-subscribeCloseBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-        subscribePopup.classList.remove('show');
-        subscribePopup.classList.add('close');
-    })
-});
+    const subscribeCloseBtn = document.querySelectorAll('.subscribe-close');
+    
+    subscribeCloseBtn.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            subscribePopup.classList.remove('show');
+            subscribePopup.classList.add('close');
+        })
+    });
+}
 
 document.documentElement.style.setProperty(
     '--navbar-height',
