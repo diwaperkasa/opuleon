@@ -73,3 +73,25 @@ function opuleon_default_description(string $description)
 add_filter('wpseo_metadesc', 'opuleon_default_description');
 add_filter('wpseo_opengraph_desc', 'opuleon_default_description');
 add_filter('wpseo_twitter_description', 'opuleon_default_description');
+
+add_action('admin_enqueue_scripts', function ($hook) {
+    if (!in_array($hook, ['post.php', 'post-new.php'])) {
+        return;
+    }
+
+    wp_enqueue_script(
+        'yoast-italic-title',
+        get_stylesheet_directory_uri() . '/assets/js/yoast-italic-title.js',
+        ['yoast-seo-post-edit-classic'],
+        null,
+        true
+    );
+
+    wp_localize_script(
+        'yoast-italic-title',
+        'italicTitleData',
+        [
+            'italicTitle' => get_post_meta(get_the_ID(), '_italic_title', true),
+        ]
+    );
+});
