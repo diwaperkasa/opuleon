@@ -59,7 +59,7 @@ if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', async (e) => {
         const button = e.currentTarget; // simpan referensi
         const loader = document.createElement('div');
-        loader.className = 'loader';
+        loader.classList.add('loader', 'my-2');
 
         try {
             const limit = button.dataset.limit;
