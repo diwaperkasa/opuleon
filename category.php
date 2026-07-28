@@ -24,7 +24,7 @@ function content()
                     <?php endif; ?>
                 <?php endwhile; ?>
             </div>
-            <div class="text-center mb-3">
+            <div class="d-flex justify-content-center mb-3">
                 <button class="btn btn-outline-dark bg-light border-warning-hover load-more-btn px-5 text-uppercase text-warning-hover" data-limit="10" data-page="2" data-class="col-lg-4" data-term="<?= $term->term_id ?>">
                     Load More
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-repeat" viewBox="0 0 20 20">

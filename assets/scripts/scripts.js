@@ -58,6 +58,8 @@ const loadMoreBtn = document.querySelector('.load-more-btn');
 if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', async (e) => {
         const button = e.currentTarget; // simpan referensi
+        const loader = document.createElement('div');
+        loader.className = 'loader';
 
         try {
             const limit = button.dataset.limit;
@@ -75,7 +77,8 @@ if (loadMoreBtn) {
                 args.term_id = term;
             }
 
-            button.disabled = true;
+            button.classList.add('d-none');
+            button.after(loader);
 
             const res = await fetch(`/wp-admin/admin-ajax.php?${new URLSearchParams(args)}`)
                 .then(async (response) => {
@@ -101,7 +104,8 @@ if (loadMoreBtn) {
 
             button.dataset.page = ++page;
         } catch (error) {} finally {
-            button.disabled = false;
+            button.classList.remove('d-none');
+            loader.remove();
         }
     });
 }
