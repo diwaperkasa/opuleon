@@ -8,8 +8,6 @@ jQuery(window).on('YoastSEO:ready', function () {
     refreshTitle();
 
     document.getElementById('headlessui-switch-:r0:').addEventListener('click', function () {
-        console.log('halo');
-
         setTimeout(function() {
             refreshTitle();
         }, 100)
