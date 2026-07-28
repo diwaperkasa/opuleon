@@ -10,13 +10,34 @@ add_action( 'after_setup_theme', 'crb_load' );
 
 function crb_attach_theme_options()
 {
-    \Carbon_Fields\Container::make( 'theme_options', __( 'Theme Options' ) )
+    $basic_options_container = Carbon_Fields\Container::make( 'theme_options', __( 'Themes Options' ) )
         ->add_fields( array(
-            \Carbon_Fields\Field::make( 'text', 'crb_facebook', 'Facebook URL' ),
-            \Carbon_Fields\Field::make( 'text', 'crb_twitter', 'Twitter URL' ),
-            \Carbon_Fields\Field::make( 'text', 'crb_instagram', 'Instagram URL' ),
-            \Carbon_Fields\Field::make( 'text', 'crb_linkedin', 'LinkedIn URL' ),
+            \Carbon_Fields\Field::make( 'header_scripts', 'theme_header_script', __( 'Header Script' ) ),
+            \Carbon_Fields\Field::make( 'footer_scripts', 'theme_footer_script', __( 'Footer Script' ) ),
         ) );
+    
+    \Carbon_Fields\Container::make( 'theme_options', __( 'Social Links' ) )
+        ->set_page_parent( $basic_options_container )
+        ->add_fields([
+            \Carbon_Fields\Field::make( 'text', 'social_facebook', 'Facebook URL' ),
+            \Carbon_Fields\Field::make( 'text', 'social_twitter', 'Twitter URL' ),
+            \Carbon_Fields\Field::make( 'text', 'social_instagram', 'Instagram URL' ),
+            \Carbon_Fields\Field::make( 'text', 'social_linkedin', 'LinkedIn URL' ),
+        ]);
+    
+    \Carbon_Fields\Container::make( 'theme_options', __( 'Subscribe Settings' ) )
+        ->set_page_parent( $basic_options_container )
+        ->add_fields([
+            \Carbon_Fields\Field::make( 'text', 'subs_title', 'Title' ),
+            \Carbon_Fields\Field::make( 'text', 'subs_sub_title', 'Subtitle' ),
+            \Carbon_Fields\Field::make( 'textarea', 'subs_desc', 'Description' ),
+        ]);
+
+    \Carbon_Fields\Container::make( 'theme_options', __( 'General Settings' ) )
+        ->set_page_parent( $basic_options_container )
+        ->add_fields([
+            \Carbon_Fields\Field::make( 'text', 'general_more_post_btn_text', 'More post button text' ),
+        ]);
 
     \Carbon_Fields\Container::make('post_meta', 'Featured image caption')
         ->where('post_type', '=', 'post')

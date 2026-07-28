@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <div class="d-flex justify-content-between">
-                        <p class="text-warning dm-sans text-uppercase tracking-wide mb-1">TAKE A MOMENT WITH US</p>
+                        <p class="text-warning dm-sans tracking-wide mb-1"><?= esc_html(carbon_get_theme_option('subs_title')) ?></p>
                         <div class="d-md-none d-flex justify-content-end mt-n2">
                             <button style="height: 40px; width: 40px;" type="button" class="btn btn-light text-reset rounded-pill subscribe-close">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -13,8 +13,8 @@
                             </button>
                         </div>
                     </div>
-                    <p class="h4 playfair-display">Join the Opuleon Community</p>
-                    <p class="dm-sans text-secondary mb-0">For latest from the worlds of dining, travel, and watches—and invites to exclusive events tailored just for you. Thoughtfully curated, once a week.</p>
+                    <p class="h4 playfair-display"><?= esc_html(carbon_get_theme_option('subs_sub_title')) ?></p>
+                    <p class="dm-sans text-secondary mb-0"><?= esc_html(carbon_get_theme_option('subs_desc')) ?></p>
                 </div>
                 <div class="col-md-4">
                     <form class="mt-3 mt-md-0" action="javascript:void(0);">
