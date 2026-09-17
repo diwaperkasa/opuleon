@@ -14144,7 +14144,7 @@ textarea.form-control-lg {
   font-family: "Playfair Display";
 }
 
-.post__content blockquote {
+.site-inner blockquote {
   quotes: "“" "”" "‘" "’";
   font-size: 1.5rem;
   font-style: italic;
@@ -14153,50 +14153,50 @@ textarea.form-control-lg {
   padding-left: 1rem;
   border-left: 2px solid #B59A6A;
 }
-.post__content blockquote p {
+.site-inner blockquote p {
   font-family: "Playfair Display";
 }
-.post__content blockquote p::before {
+.site-inner blockquote p::before {
   content: open-quote;
 }
-.post__content blockquote p::after {
+.site-inner blockquote p::after {
   content: close-quote;
 }
-.post__content blockquote footer {
+.site-inner blockquote footer {
   font-size: 0.75rem;
   font-family: "DM Sans";
   letter-spacing: 0.1em;
   color: rgba(var(--bs-warning-rgb), 1) !important;
 }
-.post__content blockquote footer cite {
+.site-inner blockquote footer cite {
   font-style: normal;
 }
-.post__content a {
+.site-inner a {
   text-decoration: underline;
   color: #B59A6A;
   text-underline-offset: 5px;
 }
-.post__content .wp-caption {
+.site-inner .wp-caption {
   max-width: 100%;
 }
-.post__content .wp-caption-text {
+.site-inner .wp-caption-text {
   font-family: "DM Sans";
   font-size: 0.75rem;
   color: var(--bs-secondary);
 }
-.post__content img {
+.site-inner img {
   max-width: 100%;
   height: auto;
   margin-bottom: 0.5rem;
 }
-.post__content .gallery figure {
+.site-inner .gallery figure {
   width: 100%;
 }
-.post__content .gallery:hover .flickity-prev-next-button {
+.site-inner .gallery:hover .flickity-prev-next-button {
   opacity: 1;
   visibility: visible;
 }
-.post__content .gallery:hover .next, .post__content .gallery:hover .previous {
+.site-inner .gallery:hover .next, .site-inner .gallery:hover .previous {
   transform: translateX(0);
 }
 
