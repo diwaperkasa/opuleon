@@ -14144,6 +14144,11 @@ textarea.form-control-lg {
   font-family: "Playfair Display";
 }
 
+.site-inner .post__content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
 .site-inner blockquote {
   quotes: "“" "”" "‘" "’";
   font-size: 1.5rem;
@@ -14183,11 +14188,6 @@ textarea.form-control-lg {
   font-family: "DM Sans";
   font-size: 0.75rem;
   color: var(--bs-secondary);
-}
-.site-inner img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 0.5rem;
 }
 .site-inner .gallery figure {
   width: 100%;

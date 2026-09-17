@@ -118,6 +118,14 @@
 }
 
 .site-inner {
+    .post__content {
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: .5rem;
+        }
+    }
+    
     blockquote {
         quotes: "“" "”" "‘" "’";
         font-size: 1.5rem;
@@ -165,12 +173,6 @@
         font-family: 'DM Sans';
         font-size: .75rem;
         color: var(--bs-secondary);
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: .5rem;
     }
 
     .gallery {
