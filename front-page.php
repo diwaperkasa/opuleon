@@ -80,7 +80,7 @@ function content()
             </div>
     </section>
     <section id="latest-articles" class="mb-4">
-        <div class="sticky-top top-section bg-white mb-3 mt-n4 pt-3">
+        <div class="sticky-top top-section bg-white mt-n4 pt-3">
             <div class="border-bottom">
                 <div class="container">
                     <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
@@ -92,7 +92,7 @@ function content()
                 <div class="row">
                     <?php foreach ($secondary_posts as $index => $secondary): $post = $secondary; setup_postdata($post); ?>
                         <div class="col-lg-4 col-md-6 <?= $index ? "border-lg-left border-lg-bottom-0" : "" ?>">
-                            <div class="p-lg-3">
+                            <div class="px-lg-3 py-lg-4">
                                 <?php get_template_part('components/post-card'); ?>
                             </div>
                         </div>

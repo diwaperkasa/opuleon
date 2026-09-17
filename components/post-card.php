@@ -4,9 +4,9 @@
             <?= get_the_post_thumbnail(
                 get_the_ID(),
                 'large',
-                ['class' => 'img-fluid rounded']
+                ['class' => 'img-fluid']
             ); ?>
-            <div class="img-overlay rounded position-absolute top-0 w-100 h-100">
+            <div class="img-overlay position-absolute top-0 w-100 h-100">
             </div>
         </div>
     </a>
