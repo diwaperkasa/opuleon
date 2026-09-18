@@ -65,7 +65,7 @@
     </div>
 </div>
 <!-- offcanvas -->
-<div class="offcanvas offcanvas-start w-100" tabindex="-1" id="offcanvasMenu">
+<div class="offcanvas offcanvas-start w-100 bg-light" tabindex="-1" id="offcanvasMenu">
     <div class="offcanvas-header">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center w-100">
