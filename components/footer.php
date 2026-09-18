@@ -3,7 +3,8 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center py-3">
                 <a href="/" class="text-decoration-none">
-                    <span class="text-dark playfair-display h4 fw-bold">Opuleon</span>
+                    <!-- <span class="text-dark playfair-display h4 fw-bold">Opuleon</span> -->
+                    <img style="height: 30px;" src="<?= get_stylesheet_directory_uri() . '/assets/images/opuleon-primary-logo.svg' ?>" alt="opuleon-logo">
                 </a>
                 <ul class="list-unstyled d-flex gap-3 mb-0">
                     <?php $menus = get_wp_menu_tree('footer') ?>
