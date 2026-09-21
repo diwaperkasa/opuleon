@@ -14,13 +14,10 @@ function content()
                         <div class="post__header">
                             <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
                             <?php if ($categories): ?>
-                                <div class="d-flex flex-row-reverse justify-content-end flex-wrap py-2 category-container">
-                                    <?php $category = $categories[0] ?>
-                                    <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
-                                    <?php while ($category->parent): ?>
-                                        <?php $category = get_term($category->parent, 'category') ?>
+                                <div class="d-flex flex-wrap category-container">
+                                    <?php foreach ($categories as $category): ?>
                                         <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
-                                    <?php endwhile ?>
+                                    <?php endforeach ?>
                                 </div>
                             <?php endif; ?>
                             <header class="post__header border-bottom pb-4" role="heading">
