@@ -78,7 +78,7 @@ function content()
     </section>
     <section id="latest-articles" class="mb-4">
         <div class="sticky-top top-section bg-white mt-n4 pt-3">
-            <div class="border-bottom">
+            <div class="border-bottom mb-3 mb-md-0">
                 <div class="container">
                     <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
                 </div>
