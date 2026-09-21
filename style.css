@@ -14144,6 +14144,11 @@ textarea.form-control-lg {
   font-family: "Playfair Display";
 }
 
+.archive-description {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .site-inner .post__content img {
   max-width: 100%;
   height: auto;
