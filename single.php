@@ -14,7 +14,7 @@ function content()
                         <div class="post__header">
                             <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
                             <?php if ($categories): ?>
-                                <div class="d-flex flex-wrap category-container">
+                                <div class="d-flex flex-wrap dot-between-item">
                                     <?php foreach ($categories as $category): ?>
                                         <a href="<?= get_term_link($category); ?>" class="text-decoration-none fs-small text-warning text-uppercase dm-sans fw-light tracking-wide fs-small"><?= $category->name ?></a>
                                     <?php endforeach ?>
