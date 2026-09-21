@@ -27,7 +27,7 @@
     font-size: 0.75rem;
 }
 
-.category-container > *:not(:last-child)::before {
+.category-container > *:not(:last-child)::after {
     content: "•";
     margin: 0 1rem;
 }
