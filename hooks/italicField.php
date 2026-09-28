@@ -95,3 +95,36 @@ add_action('admin_enqueue_scripts', function ($hook) {
         ]
     );
 });
+
+add_filter('manage_posts_columns', function ($columns) {
+    $new = [];
+
+    foreach ($columns as $key => $label) {
+        if ($key === 'title') {
+            $new['display_title'] = 'Title';
+        } else {
+            $new[$key] = $label;
+        }
+    }
+
+    return $new;
+});
+
+add_action('manage_posts_custom_column', function ($column, $post_id) {
+    if ($column !== 'display_title') {
+        return;
+    }
+
+    $title = get_the_title($post_id);
+    $italic_title = trim(get_post_meta(get_the_ID(), '_italic_title', true));
+
+    if ($italic_title) {
+        $title .= ' ' . $italic_title;
+    }
+
+    printf(
+        '<strong><a class="row-title" href="%s">%s</a></strong>',
+        esc_url(get_edit_post_link($post_id)),
+        esc_html($title)
+    );
+}, 10, 2);
