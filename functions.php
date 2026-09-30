@@ -216,3 +216,25 @@ function current_url()
     global $wp;
     return untrailingslashit( home_url($wp->request) );
 }
+
+function get_opuleon_categories()
+{
+    $post_id = get_the_ID();
+    $categories = get_the_category($post_id);
+
+    $primary_id = (int) get_post_meta(
+        $post_id,
+        '_yoast_wpseo_primary_category',
+        true
+    );
+
+    if ($primary_id && $categories) {
+        usort($categories, function ($a, $b) use ($primary_id) {
+            if ($a->term_id === $primary_id) return -1;
+            if ($b->term_id === $primary_id) return 1;
+            return 0;
+        });
+    }
+
+    return $categories;
+}

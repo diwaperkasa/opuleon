@@ -1,6 +1,6 @@
 <div class="card mb-0 border-0">
     <div class="card-body px-0">
-        <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
+        <?php $categories = get_opuleon_categories(); ?>
         <?php if ($categories): ?>
             <div class="d-flex flex-wrap dot-between-item">
                 <?php foreach ($categories as $category): ?>

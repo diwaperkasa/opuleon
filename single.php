@@ -12,7 +12,7 @@ function content()
                 <div class="row">
                     <div class="col-md-8">
                         <div class="post__header">
-                            <?php $categories = get_the_terms(get_the_ID(), 'category'); ?>
+                            <?php $categories = get_opuleon_categories(); ?>
                             <?php if ($categories): ?>
                                 <div class="d-flex flex-wrap dot-between-item">
                                     <?php foreach ($categories as $category): ?>
