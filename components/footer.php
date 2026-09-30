@@ -35,7 +35,7 @@
                 <ul class="list-unstyled d-flex gap-3 mb-0">
                     <?php $menus = get_wp_menu_tree('footer') ?>
                     <?php foreach ($menus as $menu): ?>
-                        <li><a href="<?= $menu['url'] ?>" class="text-decoration-none text-dark text-uppercase dm-sans tracking-wide text-warning-hover d-none d-sm-block"><?= $menu['title'] ?></a></li>
+                        <li><a href="<?= $menu['url'] ?>" class="text-decoration-none text-dark text-uppercase dm-sans tracking-wide text-warning-hover d-none d-md-block"><?= $menu['title'] ?></a></li>
                     <?php endforeach; ?>
                     <li><span class="text-dark text-uppercase dm-sans tracking-wide">&copy; 2026 <span class="d-none d-md-inline">Opuleon</span></span></li>
                 </ul>
