@@ -23,6 +23,7 @@ function crb_attach_theme_options()
             \Carbon_Fields\Field::make( 'text', 'social_twitter', 'Twitter URL' ),
             \Carbon_Fields\Field::make( 'text', 'social_instagram', 'Instagram URL' ),
             \Carbon_Fields\Field::make( 'text', 'social_linkedin', 'LinkedIn URL' ),
+            \Carbon_Fields\Field::make( 'text', 'social_youtube', 'Youtube URL' ),
         ]);
     
     \Carbon_Fields\Container::make( 'theme_options', __( 'Subscribe Settings' ) )
