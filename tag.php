@@ -9,7 +9,7 @@ function content()
 ?>
     <div class="container">
         <?php if ( have_posts() ) : ?>
-            <div class="row mt-4">
+            <div class="row pt-4">
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="col-lg-4">
                         <?php get_template_part('components/post-card'); ?>

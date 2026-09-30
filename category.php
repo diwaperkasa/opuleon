@@ -11,7 +11,7 @@ function content()
 ?>
     <div class="container">
         <?php if ( have_posts() ) : ?>
-            <div class="row post-archive-container mt-4">
+            <div class="row post-archive-container pt-4">
                 <?php while ( have_posts() ) : the_post(); ?>
                     <?php if ($wp_query->current_post  == 0): ?>
                         <div class="col-lg-12">

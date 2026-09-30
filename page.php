@@ -9,7 +9,7 @@ function content()
 ?>
     <article <?php post_class(); ?>>
         <div class="container">
-            <div class="my-5">
+            <div class="py-5">
                 <div class="page-content">
                     <?php the_content() ?> 
                 </div>

@@ -17,11 +17,19 @@
                     <p class="dm-sans text-secondary mb-0"><?= esc_html(carbon_get_theme_option('subs_desc')) ?></p>
                 </div>
                 <div class="col-md-4">
-                    <form class="mt-3 mt-md-0" action="javascript:void(0);">
+                    <form id="mc-embedded-subscribe-form" class="validate mt-3 mt-md-0" action="https://opuleon.us14.list-manage.com/subscribe/post?u=219e2fbdd33790cfdbb025217&amp;id=9224677bee&amp;f_id=00fdbee5f0" method="post" name="mc-embedded-subscribe-form" target="_blank">
                         <div class="mb-3">
-                            <input type="email" class="rounded form-control dm-sans border-warning" id="email" placeholder="Your email address" required />
+                            <input name="EMAIL" type="email" class="rounded form-control dm-sans border-warning" id="email" placeholder="Your email address" required />
                         </div>
-                        <button type="submit" class="w-100 border-black rounded btn btn-light text-uppercase dm-sans text-warning-hover border-warning-hover">Subscribe
+                        <div id="mce-responses" class="clear foot">
+                            <div id="mce-error-response" class="response mb-3" style="display: none;"></div>
+                            <div id="mce-success-response" class="response mb-3" style="display: none;"></div>
+                        </div>
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                            <input tabindex="-1" name="b_219e2fbdd33790cfdbb025217_9224677bee" type="text" value="" />
+                        </div>
+                        <button id="mc-embedded-subscribe" type="submit" class="w-100 border-black rounded btn btn-light text-uppercase dm-sans text-warning-hover border-warning-hover">Subscribe
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                             </svg>
