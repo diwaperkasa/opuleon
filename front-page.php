@@ -21,7 +21,7 @@ function content()
     $remaining_posts = array_slice($posts, 4, 6);
 ?>
     <section id="hero-section" class="mb-4">
-        <div class="border-bottom-0 border-md-bottom">
+        <div class="">
             <div class="container hero-container">
                 <?php foreach ($featured_post as $featured): $post = $featured; setup_postdata($post); ?>
                     <div class="hero-image">
@@ -78,18 +78,18 @@ function content()
     </section>
     <section id="latest-articles" class="mb-4">
         <div class="sticky-top top-section bg-white mt-n4 pt-3">
-            <div class="border-bottom mb-3 mb-lg-0">
-                <div class="container">
+            <div class="container">
+                <div class="border-bottom mb-3 mb-lg-0">
                     <h2 class="h6 text-uppercase dm-sans fw-normal tracking-wide">Latest Stories</h2>
                 </div>
             </div>
         </div>
-        <div class="border-bottom">
-            <div class="container">
+        <div class="container">
+            <div class="border-bottom">
                 <div class="row">
                     <?php foreach ($secondary_posts as $index => $secondary): $post = $secondary; setup_postdata($post); ?>
-                        <div class="col-lg-4 col-md-6 <?= $index ? "border-lg-left border-lg-bottom-0" : "" ?>">
-                            <div class="px-lg-3 py-lg-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="py-lg-4">
                                 <?php get_template_part('components/post-card'); ?>
                             </div>
                         </div>
@@ -111,9 +111,9 @@ function content()
             ]);
             $category = get_term($row['category_id'], 'category');
             ?>
-            <div class="border-bottom mb-4">
-                <div class="border-bottom mb-4 mt-n3 pt-3 sticky-top top-section bg-white">
-                    <div class="container">
+            <div class="mb-4">
+                <div class="container">
+                    <div class="border-bottom mb-4 mt-n3 pt-3 sticky-top top-section bg-white">
                         <div class="d-flex justify-content-between pb-1">
                             <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide m-0 p-0">More from <?= $category->name ?></h2>
                             <a href="<?= get_term_link($category) ?>" class="text-decoration-none text-warning text-uppercase tracking-wide">
@@ -126,32 +126,34 @@ function content()
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row">
-                        <?php while ($category_posts_query->have_posts()): $category_posts_query->the_post(); ?>
-                            <?php if ($category_posts_query->current_post == 0): ?>
-                                <div class="col-12">
-                                    <div class="border-0 border-md-bottom">
-                                        <?php get_template_part('components/post-card', 'landscape'); ?>
-                                    </div>
-                                </div>
-                            <?php else: ?>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="py-4 h-100">
-                                        <div class="h-100">
-                                            <?php get_template_part('components/post-card'); ?>
+                    <div class="border-bottom">
+                        <div class="row">
+                            <?php while ($category_posts_query->have_posts()): $category_posts_query->the_post(); ?>
+                                <?php if ($category_posts_query->current_post == 0): ?>
+                                    <div class="col-12">
+                                        <div class="border-0 border-md-bottom">
+                                            <?php get_template_part('components/post-card', 'landscape'); ?>
                                         </div>
                                     </div>
-                                </div>
-                            <?php endif ?>
-                        <?php endwhile; wp_reset_postdata(); ?>
+                                <?php else: ?>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="py-4 h-100">
+                                            <div class="h-100">
+                                                <?php get_template_part('components/post-card'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif ?>
+                            <?php endwhile; wp_reset_postdata(); ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     <?php endforeach ?>
     <section id="archives" class="mb-3">
-        <div class="border-bottom mb-4 sticky-top top-section bg-white">
-            <div class="container">
+        <div class="container">
+            <div class="border-bottom mb-4 sticky-top top-section bg-white">
                 <div class="mt-n3 pt-3">
                     <h2 class="h6 text-uppercase dm-sans h4 fw-normal tracking-wide">More from The Archives</h2>
                 </div>
