@@ -68,7 +68,7 @@ function content()
                         </div>
                         <div class="border-bottom py-2">
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-secondary text-uppercase dm-sans tracking-wide">Share This Piece</span>
+                                <span class="text-secondary text-uppercase dm-sans tracking-wide">Share This Story</span>
                                 <div class="social-buttons d-flex">
                                     <button class="btn" data-sharer="twitter" data-title="Share from Opuleon! <?= get_the_permalink() ?>">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
@@ -87,14 +87,16 @@ function content()
                                     </button>
                                 </div>
                             </div>
-                            <div class="d-flex flex-wrap">
-                                <?php $tags = get_the_tags() ?: []; ?>
-                                <?php foreach ($tags as $tag): ?>
-                                    <a href="<?= esc_url(get_tag_link($tag->term_id)) ?>" class="btn text-decoration-none btn-outline-dark border-secondary bg-white text-secondary text-warning-hover border-warning-hover me-2 mb-2 text-nowrap">
-                                        <span class="fs-small"><?= esc_html($tag->name) ?></span>
-                                    </a>
-                                <?php endforeach; ?>
-                            </div>
+                            <?php $tags = get_the_tags() ?: []; ?>
+                            <?php if ($tags): ?>
+                                <div class="d-flex flex-wrap gap-2 row-gap-2 py-2">
+                                    <?php foreach ($tags as $tag): ?>
+                                        <a href="<?= esc_url(get_tag_link($tag->term_id)) ?>" class="btn text-decoration-none btn-outline-dark border-secondary bg-white text-secondary text-warning-hover border-warning-hover text-nowrap">
+                                            <span class="fs-small"><?= esc_html($tag->name) ?></span>
+                                        </a>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                         <footer class="post__footer my-3">
                             <div class="border-bottom mb-4 mt-n3 pt-3 sticky-top top-section bg-white">
