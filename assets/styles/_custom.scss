@@ -132,7 +132,7 @@
     }
     
     blockquote {
-        quotes: "“" "”" "‘" "’";
+        // quotes: "“" "”" "‘" "’";
         font-size: 1.5rem;
         font-style: italic;
         padding-top: .5rem;
@@ -144,13 +144,13 @@
             font-family: "Playfair Display";
         }
 
-        p::before {
-            content: open-quote;
-        }
+        // p::before {
+        //     content: open-quote;
+        // }
 
-        p::after {
-            content: close-quote;
-        }
+        // p::after {
+        //     content: close-quote;
+        // }
 
         footer {
             font-size: .75rem;

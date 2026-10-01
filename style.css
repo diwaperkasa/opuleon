@@ -14155,7 +14155,6 @@ textarea.form-control-lg {
   margin-bottom: 0.5rem;
 }
 .site-inner blockquote {
-  quotes: "“" "”" "‘" "’";
   font-size: 1.5rem;
   font-style: italic;
   padding-top: 0.5rem;
@@ -14165,12 +14164,6 @@ textarea.form-control-lg {
 }
 .site-inner blockquote p {
   font-family: "Playfair Display";
-}
-.site-inner blockquote p::before {
-  content: open-quote;
-}
-.site-inner blockquote p::after {
-  content: close-quote;
 }
 .site-inner blockquote footer {
   font-size: 0.75rem;
