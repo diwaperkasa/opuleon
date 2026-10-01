@@ -20,7 +20,7 @@ function content()
                                     <?php endforeach ?>
                                 </div>
                             <?php endif; ?>
-                            <header class="post__header border-bottom pb-4" role="heading">
+                            <header class="post__header pb-4" role="heading">
                                 <h1 class="post__title playfair-display fw-bold"><?php the_title() ?>
                                     <?php if ($italic_title = get_post_meta(get_the_ID(), '_italic_title', true)) : ?>
                                         <span class="fw-normal fst-italic"><?= esc_html($italic_title) ?></span>
