@@ -16,7 +16,7 @@
                     <p class="h4 playfair-display"><?= esc_html(carbon_get_theme_option('subs_sub_title')) ?></p>
                     <p class="dm-sans text-secondary mb-0"><?= esc_html(carbon_get_theme_option('subs_desc')) ?></p>
                 </div>
-                <div class="col-md-4 my-auto">
+                <div class="col-md-4 my-auto py-3 py-md-0">
                     <!-- <form id="mc-embedded-subscribe-form" class="validate mt-3 mt-md-0" action="https://opuleon.us14.list-manage.com/subscribe/post?u=219e2fbdd33790cfdbb025217&amp;id=9224677bee&amp;f_id=00fdbee5f0" method="post" name="mc-embedded-subscribe-form" target="_blank">
                         <div class="mb-3">
                             <input name="EMAIL" type="email" class="rounded form-control dm-sans border-warning" id="email" placeholder="Your email address" required />
