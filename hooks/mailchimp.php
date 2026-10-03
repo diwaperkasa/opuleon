@@ -12,7 +12,7 @@ function mailchimp_script()
                 <div class="modal-body">
                     <p class="h1 fw-bold text-center playfair-display mb-3">Opuleon</p>
                     <div class="row justify-content-center">
-                        <div class="col-md-2">
+                        <div class="col-2">
                             <hr class="border-dark mb-4">
                         </div>
                     </div>
