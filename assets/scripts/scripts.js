@@ -1,132 +1,163 @@
-import bootstrap from 'bootstrap';
+import { Modal } from 'bootstrap';
 import 'sharer.js';
 import Flickity from 'flickity';
 
-const header = document.querySelector('.site-header');
-const subscribePopup = document.querySelector('.subscribe-popup-fixed');
+(async function () {
 
-if (subscribePopup) {
-    window.addEventListener("scroll", () => {
-        const current = window.scrollY;
-        const offsetHeight = header.offsetHeight;
-    
-        if (current > offsetHeight) {
-            if (!subscribePopup.classList.contains('close')) {
-                subscribePopup.classList.add('show');
+    const header = document.querySelector('.site-header');
+    const subscribePopup = document.querySelector('.subscribe-popup-fixed');
+
+    if (subscribePopup) {
+        window.addEventListener("scroll", () => {
+            const current = window.scrollY;
+            const offsetHeight = header.offsetHeight;
+
+            if (current > offsetHeight) {
+                if (!subscribePopup.classList.contains('close')) {
+                    subscribePopup.classList.add('show');
+                }
+            } else {
+                subscribePopup.classList.remove('show');
             }
-        } else {
-            subscribePopup.classList.remove('show');
-        }
-    });
+        });
 
-    const subscribeCloseBtn = document.querySelectorAll('.subscribe-close');
-    
-    subscribeCloseBtn.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-            subscribePopup.classList.remove('show');
-            subscribePopup.classList.add('close');
-        })
-    });
-}
+        const subscribeCloseBtn = document.querySelectorAll('.subscribe-close');
 
-document.documentElement.style.setProperty(
-    '--navbar-height',
-    `${header.offsetHeight - 1}px`
-);
+        subscribeCloseBtn.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                subscribePopup.classList.remove('show');
+                subscribePopup.classList.add('close');
+            })
+        });
+    }
 
-window.addEventListener('resize', () => {
     document.documentElement.style.setProperty(
         '--navbar-height',
         `${header.offsetHeight - 1}px`
     );
-});
 
-const galleries = document.querySelectorAll('.gallery');
-
-galleries.forEach((gallery) => {
-    const flkty = new Flickity(gallery, {
-        cellAlign: 'center',
-        freeScroll: false,
-        wrapAround: true,
-        autoPlay: true,
-        pageDots: true
+    window.addEventListener('resize', () => {
+        document.documentElement.style.setProperty(
+            '--navbar-height',
+            `${header.offsetHeight - 1}px`
+        );
     });
-});
 
-const loadMoreBtn = document.querySelector('.load-more-btn');
+    const galleries = document.querySelectorAll('.gallery');
 
-if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', async (e) => {
-        const button = e.currentTarget; // simpan referensi
-        const loader = document.createElement('div');
-        loader.classList.add('loader', 'my-2');
+    galleries.forEach((gallery) => {
+        const flkty = new Flickity(gallery, {
+            cellAlign: 'center',
+            freeScroll: false,
+            wrapAround: true,
+            autoPlay: true,
+            pageDots: true
+        });
+    });
 
-        try {
-            const limit = button.dataset.limit;
-            let page = parseInt(button.dataset.page, 10);
-            const term = button.dataset.term;
-            const className = button.dataset.class;
+    const loadMoreBtn = document.querySelector('.load-more-btn');
 
-            const args = {
-                action: 'more_post',
-                page,
-                length: limit,
-            };
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', async (e) => {
+            const button = e.currentTarget; // simpan referensi
+            const loader = document.createElement('div');
+            loader.classList.add('loader', 'my-2');
 
-            if (term) {
-                args.term_id = term;
-            }
+            try {
+                const limit = button.dataset.limit;
+                let page = parseInt(button.dataset.page, 10);
+                const term = button.dataset.term;
+                const className = button.dataset.class;
 
-            button.classList.add('d-none');
-            button.after(loader);
+                const args = {
+                    action: 'more_post',
+                    page,
+                    length: limit,
+                };
 
-            const res = await fetch(`/wp-admin/admin-ajax.php?${new URLSearchParams(args)}`)
-                .then(async (response) => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
+                if (term) {
+                    args.term_id = term;
+                }
 
-                    return response.json();
+                button.classList.add('d-none');
+                button.after(loader);
+
+                const res = await fetch(`/wp-admin/admin-ajax.php?${new URLSearchParams(args)}`)
+                    .then(async (response) => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+
+                        return response.json();
+                    });
+
+                if (!res.data.length) return;
+
+                const articleContainer = document.querySelector('.post-archive-container');
+
+                if (!articleContainer) return;
+
+                res.data.forEach((row) => {
+                    articleContainer.insertAdjacentHTML(
+                        'beforeend',
+                        `<div class="${className}">${row}</div>`
+                    );
                 });
 
-            if (!res.data.length) return;
+                button.dataset.page = ++page;
+            } catch (error) { } finally {
+                button.classList.remove('d-none');
+                loader.remove();
+            }
+        });
+    }
 
-            const articleContainer = document.querySelector('.post-archive-container');
+    const searchBtn = document.querySelectorAll('.search-btn');
 
-            if (!articleContainer) return;
+    searchBtn.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const searchContainer = document.querySelector('.search-container');
+            searchContainer.classList.toggle('show');
 
-            res.data.forEach((row) => {
-                articleContainer.insertAdjacentHTML(
-                    'beforeend',
-                    `<div class="${className}">${row}</div>`
-                );
-            });
+            const primaryBtn = document.querySelectorAll('.top-menu .nav-item:not(.cancel-box)')
 
-            button.dataset.page = ++page;
-        } catch (error) {} finally {
-            button.classList.remove('d-none');
-            loader.remove();
-        }
+            primaryBtn.forEach((btn) => {
+                btn.classList.toggle('d-none');
+            })
+
+            const closeBtn = document.querySelectorAll('.top-menu .cancel-box')
+
+            closeBtn.forEach((btn) => {
+                btn.classList.toggle('d-none');
+            })
+        })
     });
-}
 
-const searchBtn = document.querySelectorAll('.search-btn');
+    const successSubscribeModal = document.querySelector('#success-subscribe-modal');
 
-searchBtn.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        const searchContainer = document.querySelector('.search-container');
-        searchContainer.classList.toggle('show');
+    if (successSubscribeModal) {
+        if (typeof $mcj == 'function') {
+            $mcj('#mc-embedded-subscribe-form').on('form-pre-serialize', function () {
+                document.querySelector('#mc-embedded-subscribe').disabled = true;
+            });
+        }
 
-        const primaryBtn = document.querySelectorAll('.top-menu .nav-item:not(.cancel-box)')
+        const successModal = Modal.getOrCreateInstance(successSubscribeModal);
+        const opts = window.mc && window.mc.ajaxOptions;
 
-        primaryBtn.forEach((btn) => {
-            btn.classList.toggle('d-none');
-        })
+        if (!opts) return;
+        // Success / error (resp.result, resp.msg)
+        const origSuccess = opts.success;
 
-        const closeBtn = document.querySelectorAll('.top-menu .cancel-box')
+        opts.success = function (resp) {
+            document.querySelector('#mc-embedded-subscribe').disabled = false;
 
-        closeBtn.forEach((btn) => {
-            btn.classList.toggle('d-none');
-        })
-    })
-})
+            if (resp && resp.result === 'success') {
+                successModal.show();
+            }
+
+            return origSuccess && origSuccess.apply(this, arguments);
+        };
+    }
+
+})();

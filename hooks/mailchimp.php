@@ -3,6 +3,29 @@
 function mailchimp_script()
 {
 ?>
+    <div class="modal" tabindex="-1" id="success-subscribe-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-0">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="h1 fw-bold text-center playfair-display mb-3">Opuleon</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-2">
+                            <hr class="border-dark mb-4">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <p class="text-center h2 playfair-display mb-4">Thank you for subscribing!</p>
+                            <button type="button" class="rounded-0 w-100 btn bg-dark text-white tracking-wide mb-4 text-uppercase" data-bs-dismiss="modal">Continue Reading</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">
         (function($) {
@@ -1473,7 +1496,6 @@ function mailchimp_script()
                     phoneInput.value = selectedProgram.countryCallingCode;
                 }
 
-
                 updateSmsLegalText(selectedCountry, fieldName);
                 updatePlaceholder(selectedCountry, fieldName);
                 updateCountryCodeInstruction(selectedCountry, fieldName);
@@ -1492,4 +1514,4 @@ function mailchimp_script()
 <?php
 }
 
-add_action('wp_footer', 'mailchimp_script', 1000);
+add_action('wp_footer', 'mailchimp_script', 5);
