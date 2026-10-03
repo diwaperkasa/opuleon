@@ -14248,7 +14248,7 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 2000;
 }
 
 .link-hover::before {
