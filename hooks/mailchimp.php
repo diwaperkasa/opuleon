@@ -3,7 +3,7 @@
 function mailchimp_script()
 {
 ?>
-    <div class="modal" tabindex="-1" id="success-subscribe-modal">
+    <div class="modal fade" tabindex="-1" id="success-subscribe-modal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-0">
                 <div class="modal-header border-0">

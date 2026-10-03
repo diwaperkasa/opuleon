@@ -142,7 +142,7 @@ import Flickity from 'flickity';
             });
         }
 
-        const successModal = Modal.getOrCreateInstance(successSubscribeModal);
+        const successModal = new Modal(successSubscribeModal);
         const opts = window.mc && window.mc.ajaxOptions;
 
         if (!opts) return;
