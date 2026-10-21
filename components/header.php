@@ -26,7 +26,7 @@
                 </li>
             </ul>
             <a class="navbar-brand m-0 my-2" href="/">
-                <img style="height: 50px;" src="<?= get_stylesheet_directory_uri() . '/assets/images/opuleon-primary-logo.svg' ?>" alt="opuleon-logo">
+                <img style="height: 50px;" src="<?= get_stylesheet_directory_uri() . '/assets/images/opuleon-primary-logo.png' ?>" alt="opuleon-logo">
             </a>
             <a class="text-decoration-none navbar-item fw-normal text-uppercase dm-sans text-dark m-0 tracking-wide fs-small" href="/subscribe">Subscribe</a>
         </div>
@@ -77,7 +77,7 @@
                 </button>
                 <a href="/" class="text-decoration-none">
                     <!-- <span class="text-dark fw-bold h2 playfair-display">Opuleon</span> -->
-                    <img style="height: 30px;" src="<?= get_stylesheet_directory_uri() . '/assets/images/opuleon-primary-logo.svg' ?>" alt="opuleon-logo">
+                    <img style="height: 30px;" src="<?= get_stylesheet_directory_uri() . '/assets/images/opuleon-primary-logo.png' ?>" alt="opuleon-logo">
                 </a>
             </div>
         </div>

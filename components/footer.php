@@ -5,7 +5,7 @@
                 <div class="d-flex align-items-center gap-3">
                     <a href="/" class="text-decoration-none">
                         <!-- <span class="text-dark playfair-display h4 fw-bold">Opuleon</span> -->
-                        <img style="height: 30px;" src="<?= get_stylesheet_directory_uri() . '/assets/images/opuleon-primary-logo.svg' ?>" alt="opuleon-logo">
+                        <img style="height: 30px;" src="<?= get_stylesheet_directory_uri() . '/assets/images/opuleon-primary-logo.png' ?>" alt="opuleon-logo">
                     </a>
                     <span class="text-secondary">|</span>
                     <ul class="list-unstyled d-flex gap-3 mb-0">
