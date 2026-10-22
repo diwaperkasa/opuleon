@@ -8,6 +8,14 @@ import Flickity from 'flickity';
     const subscribePopup = document.querySelector('.subscribe-popup-fixed');
     const mainNavbar = document.querySelector('.main-navbar');
 
+    window.addEventListener("scroll", () => {
+        if (current > 0) {
+            mainNavbar.classList.add('shadow');
+        } else {
+            mainNavbar.classList.remove('shadow');
+        }
+    });
+
     if (subscribePopup) {
         window.addEventListener("scroll", () => {
             const current = window.scrollY;
@@ -19,12 +27,6 @@ import Flickity from 'flickity';
                 }
             } else {
                 subscribePopup.classList.remove('show');
-            }
-
-            if (current > 0) {
-                mainNavbar.classList.add('shadow');
-            } else {
-                mainNavbar.classList.remove('shadow');
             }
         });
 
