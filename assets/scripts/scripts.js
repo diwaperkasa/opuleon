@@ -6,6 +6,7 @@ import Flickity from 'flickity';
 
     const header = document.querySelector('.site-header');
     const subscribePopup = document.querySelector('.subscribe-popup-fixed');
+    const mainNavbar = document.querySelector('.main-navbar');
 
     if (subscribePopup) {
         window.addEventListener("scroll", () => {
@@ -18,6 +19,12 @@ import Flickity from 'flickity';
                 }
             } else {
                 subscribePopup.classList.remove('show');
+            }
+
+            if (current > 0) {
+                mainNavbar.classList.add('shadow');
+            } else {
+                mainNavbar.classList.remove('shadow');
             }
         });
 

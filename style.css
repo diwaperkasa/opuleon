@@ -14251,6 +14251,10 @@ textarea.form-control-lg {
   z-index: 2000;
 }
 
+.main-navbar {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
 .link-hover::before {
   position: absolute;
   content: "";
