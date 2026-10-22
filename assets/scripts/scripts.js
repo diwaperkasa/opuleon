@@ -9,6 +9,8 @@ import Flickity from 'flickity';
     const mainNavbar = document.querySelector('.main-navbar');
 
     window.addEventListener("scroll", () => {
+        const current = window.scrollY;
+
         if (current > 0) {
             mainNavbar.classList.add('shadow');
         } else {
